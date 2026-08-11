@@ -23,7 +23,7 @@ def respond(message, history):
 
     response = client.chat_completion(
         messages,
-        max_tokens=100, temperature=1.3
+        max_tokens=100, temperature=1.5
     )
 
     return response.choices[0].message.content.strip()
