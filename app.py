@@ -3,7 +3,7 @@ from huggingface_hub import InferenceClient
 import pandas as pd 
 
 #copy/paste from previous Semantic search assignment
-!pip install -q sentence-transformers
+#!pip install -q sentence-transformers
 from sentence_transformers import SentenceTransformer  #turns sentences into vectors
 import torch
 
