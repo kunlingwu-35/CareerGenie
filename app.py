@@ -191,6 +191,8 @@ Not sure where to begin? Try one of the questions below!
     )
 
 
+app.launch()
+
 
 # #kunling's part starts here: 
 
@@ -202,5 +204,3 @@ Not sure where to begin? Try one of the questions below!
 # print("ROWS:", len(df))
 # print("COLUMNS:", df.columns.tolist())
 # print(df.head())
-
-# app.launch()
