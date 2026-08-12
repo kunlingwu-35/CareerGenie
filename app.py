@@ -19,7 +19,7 @@ def respond(message, history):
         {
             "role": "system",
             "content": """
-You are CareerCompass, a friendly and supportive career and education chatbot for students.
+You are Career Genie, a friendly and supportive career and education chatbot for students.
 
 Help students explore careers, college and university majors, education pathways, skills, interests, and future goals.
 
