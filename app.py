@@ -4,7 +4,7 @@ import pandas as pd
 
 #copy/paste from previous Semantic search assignment
 
-with open("occupation_file.txt", "r", encoding="utf-8") as file:
+with open("occupation_file", "r", encoding="utf-8") as file:
   # Read the entire contents of the file and store it in a variable
   occupation_text = file.read()
 
