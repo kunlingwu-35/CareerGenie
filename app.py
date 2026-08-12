@@ -45,14 +45,14 @@ with gr.Blocks() as app:
  chatbot = gr.ChatInterface(
         fn=respond,
 
-examples=[
+    examples=[
             "I like biology and helping people. What careers could fit me?",
             "I enjoy coding and art. What careers combine both?",
             "I don't know what career I want.",
             "What majors should I explore if I like math?",
             "I like technology but I also want to work with people."
         ]
-                         )
+ )
 
 chatbot.launch()
 
