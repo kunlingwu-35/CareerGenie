@@ -167,42 +167,419 @@ Stay focused on careers, education, majors, skills, and future planning. Provide
     return response.choices[0].message.content.strip()
 
 
-with gr.Blocks() as app:
+css = """
 
-    gr.Markdown(
-        """
-    Career Genie
+body {
+    background: linear-gradient(135deg, #eef9f5, #edf4ff);
+}
 
-    Find your path. Explore your future.
+.gradio-container {
+    max-width: 1150px !important;
+    margin: auto !important;
+}
 
-CareerCompass helps students explore careers, majors, and educational pathways based on their interests, strengths, favourite subjects, and goals.
+.hero {
+    background: linear-gradient(135deg, #d9f4e8, #dcecff);
+    padding: 40px;
+    border-radius: 28px;
+    text-align: center;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
 
-Not sure where to begin? Try one of the questions below!
+.hero-logo {
+    font-size: 58px;
+    margin-bottom: 5px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.hero h2 {
+    font-size: 21px;
+    font-weight: 400;
+    margin-top: 8px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 15px auto 0 auto;
+    line-height: 1.6;
+}
+
+.section-title {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 20px;
+    padding: 22px;
+    text-align: center;
+    min-height: 150px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.feature-icon {
+    font-size: 35px;
+}
+
+.quiz-box {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    margin-top: 25px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.resource-card {
+    background: white;
+    padding: 18px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+.resource-card a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.theme-bar {
+    background: white;
+    border-radius: 18px;
+    padding: 15px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.7;
+    margin-top: 25px;
+    padding-bottom: 20px;
+}
+
 """
+
+
+js = """
+
+function setLightMode() {
+    document.body.style.filter = "none";
+    document.body.style.background = "linear-gradient(135deg, #eef9f5, #edf4ff)";
+}
+
+function setDarkMode() {
+    document.body.style.filter = "none";
+    document.body.style.background = "#121212";
+
+    const container = document.querySelector(".gradio-container");
+
+    if (container) {
+        container.style.background = "#121212";
+        container.style.color = "white";
+    }
+}
+
+function setGrayscale() {
+    document.body.style.filter = "grayscale(100%)";
+}
+
+function resetTheme() {
+    document.body.style.filter = "none";
+    document.body.style.background = "linear-gradient(135deg, #eef9f5, #edf4ff)";
+
+    const container = document.querySelector(".gradio-container");
+
+    if (container) {
+        container.style.background = "";
+        container.style.color = "";
+    }
+}
+
+"""
+
+
+with gr.Blocks(css=css, js=js) as app:
+
+    gr.HTML(
+        """
+        <div class="hero">
+
+            <div class="hero-logo">
+                🧞‍♀️
+            </div>
+
+            <h1>Career Genie</h1>
+
+            <h2>Your future, one question at a time.</h2>
+
+            <p>
+                Explore careers, majors, education pathways,
+                and possibilities based on your interests,
+                strengths, and goals.
+            </p>
+
+        </div>
+        """
     )
+
+
+    gr.HTML(
+        """
+        <div class="theme-bar">
+
+            <strong>♿ Accessibility & Display</strong>
+
+            <p>
+                Customize Career Genie to make it easier
+                and more comfortable to use.
+            </p>
+
+        </div>
+        """
+    )
+
+
+    with gr.Row():
+
+        light_button = gr.Button("☀️ Light Mode")
+        dark_button = gr.Button("🌙 Dark Mode")
+        grayscale_button = gr.Button("◐ Grayscale")
+        reset_button = gr.Button("↻ Reset")
+
+
+    light_button.click(
+        fn=None,
+        js="setLightMode"
+    )
+
+    dark_button.click(
+        fn=None,
+        js="setDarkMode"
+    )
+
+    grayscale_button.click(
+        fn=None,
+        js="setGrayscale"
+    )
+
+    reset_button.click(
+        fn=None,
+        js="resetTheme"
+    )
+
+
+    gr.HTML(
+        """
+        <h2 class="section-title">
+            ✨ What can Career Genie help you with?
+        </h2>
+        """
+    )
+
+
+    with gr.Row():
+
+        gr.HTML(
+            """
+            <div class="feature-card">
+
+                <div class="feature-icon">💼</div>
+
+                <h3>Explore Careers</h3>
+
+                <p>
+                    Discover careers that match
+                    your interests, strengths,
+                    and future goals.
+                </p>
+
+            </div>
+            """
+        )
+
+        gr.HTML(
+            """
+            <div class="feature-card">
+
+                <div class="feature-icon">🎓</div>
+
+                <h3>Explore Majors</h3>
+
+                <p>
+                    Learn about college and university
+                    programs connected to different careers.
+                </p>
+
+            </div>
+            """
+        )
+
+        gr.HTML(
+            """
+            <div class="feature-card">
+
+                <div class="feature-icon">🧭</div>
+
+                <h3>Find Your Path</h3>
+
+                <p>
+                    Not sure where to start?
+                    Career Genie can ask questions
+                    and help narrow down your options.
+                </p>
+
+            </div>
+            """
+        )
+
+
+    gr.HTML(
+        """
+        <h2 class="section-title">
+            💬 Chat with Career Genie
+        </h2>
+        """
+    )
+
 
     chatbot = gr.ChatInterface(
         fn=respond,
+
         examples=[
             "I don't know what career I want.",
             "I love biology and helping people. What careers could fit me?",
-            "I like coding and art. What careers combine both?",
-            "What majors should I explore if I enjoy math?",
+            "I enjoy coding and art. What careers combine both?",
+            "What majors should I explore if I like math?",
             "I like technology but also want to work with people."
         ]
     )
 
 
+    gr.HTML(
+        """
+        <div class="quiz-box">
+
+            <h2>🧠 Career Personality Quiz</h2>
+
+            <p>
+                We're building a short personality and interests quiz
+                that will help match you with possible career paths.
+            </p>
+
+            <p>
+                Future questions could include:
+            </p>
+
+            <ul>
+                <li>What subjects do you enjoy most?</li>
+                <li>Do you prefer working with people, ideas, numbers, or technology?</li>
+                <li>Do you enjoy creative or analytical tasks?</li>
+                <li>Would you rather work independently or with a team?</li>
+                <li>What matters most to you in a future career?</li>
+            </ul>
+
+            <p>
+                <strong>Coming soon ✨</strong>
+            </p>
+
+        </div>
+        """
+    )
+
+
+    gr.HTML(
+        """
+        <h2 class="section-title">
+            🔎 Career Resources
+        </h2>
+
+        <p style="text-align:center;">
+            Use trusted sources to continue researching
+            careers Career Genie recommends.
+        </p>
+
+
+        <div class="resource-card">
+
+            <h3>🇨🇦 Government of Canada Job Bank</h3>
+
+            <p>
+                Explore careers, job requirements,
+                wages, skills, and labour-market information.
+            </p>
+
+            <a
+                href="https://www.jobbank.gc.ca/"
+                target="_blank"
+            >
+                Explore Job Bank →
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <h3>🎓 Ontario Universities</h3>
+
+            <p>
+                Research Ontario university programs
+                and post-secondary options.
+            </p>
+
+            <a
+                href="https://www.ouinfo.ca/"
+                target="_blank"
+            >
+                Explore University Programs →
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <h3>🏫 Ontario Colleges</h3>
+
+            <p>
+                Explore college programs and
+                education pathways across Ontario.
+            </p>
+
+            <a
+                href="https://www.ontariocolleges.ca/"
+                target="_blank"
+            >
+                Explore College Programs →
+            </a>
+
+        </div>
+        """
+    )
+
+
+    gr.HTML(
+        """
+        <div class="footer">
+
+            Career Genie provides general educational guidance.
+
+            Career information, salaries, admission requirements,
+            and programs may change.
+
+            Always verify important information using official sources.
+
+        </div>
+        """
+    )
+
+
 app.launch()
-
-
-# #kunling's part starts here: 
-
-
-# df = pd.read_csv(
-#     "hf://datasets/Kl80008/onet-career-data/occupation_data.csv"
-# )
-
-# print("ROWS:", len(df))
-# print("COLUMNS:", df.columns.tolist())
-# print(df.head())
