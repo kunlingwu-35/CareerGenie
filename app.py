@@ -252,16 +252,13 @@ with gr.Blocks(
 
     with gr.Row():
 
-        dark_button = gr.Button("🌙 Dark Mode")
-
-        light_button = gr.Button("☀️ Light Mode")
-
-        grayscale_button = gr.Button("◐ Grayscale")
-
-        text_button = gr.Button("A+ Larger Text")
+        light_button = gr.Button("Light Mode")
+        dark_button = gr.Button("Dark Mode")
+        grayscale_button = gr.Button("Grayscale")
+        large_text_button = gr.Button("Larger Text")
 
 
-    gr.Markdown("## ✨ Explore Career Genie")
+    gr.Markdown("Explore Career Genie")
 
 
     with gr.Row():
@@ -269,7 +266,7 @@ with gr.Blocks(
         gr.HTML(
             """
             <div class="card">
-                <h2>💼</h2>
+                <h2></h2>
                 <h3>Explore Careers</h3>
                 <p>Discover careers that match your interests and strengths.</p>
             </div>
@@ -279,7 +276,7 @@ with gr.Blocks(
         gr.HTML(
             """
             <div class="card">
-                <h2>🎓</h2>
+                <h2></h2>
                 <h3>Explore Majors</h3>
                 <p>Learn about majors connected to different career paths.</p>
             </div>
@@ -289,7 +286,7 @@ with gr.Blocks(
         gr.HTML(
             """
             <div class="card">
-                <h2>🧭</h2>
+                <h2></h2>
                 <h3>Find Your Path</h3>
                 <p>Not sure where to begin? Let Career Genie guide you.</p>
             </div>
@@ -297,7 +294,7 @@ with gr.Blocks(
         )
 
 
-    gr.Markdown("## 💬 Chat with Career Genie")
+    gr.Markdown("Chat with Career Genie")
 
 
     chatbot = gr.ChatInterface(
@@ -316,7 +313,7 @@ with gr.Blocks(
         """
         <div class="quiz-box">
 
-            <h2>🧠 Career Personality Quiz</h2>
+            <h2> Career Personality Quiz</h2>
 
             <p>
                 Answer a few questions about your interests,
@@ -324,14 +321,14 @@ with gr.Blocks(
                 careers that may fit you.
             </p>
 
-            <p><strong>Quiz feature coming next ✨</strong></p>
+            <p><strong>Quiz feature coming next </strong></p>
 
         </div>
         """
     )
 
 
-    gr.Markdown("## 🔗 Career Resources")
+    gr.Markdown("Career Resources")
 
 
     gr.HTML(
@@ -354,7 +351,7 @@ with gr.Blocks(
 
         <div class="resource-box">
 
-            <h3>🎓 Ontario Universities</h3>
+            <h3> Ontario Universities</h3>
 
             <p>
                 Explore university programs and majors.
@@ -369,7 +366,7 @@ with gr.Blocks(
 
         <div class="resource-box">
 
-            <h3>🏫 Ontario Colleges</h3>
+            <h3> Ontario Colleges</h3>
 
             <p>
                 Explore college programs and pathways.
