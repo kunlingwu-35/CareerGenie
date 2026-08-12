@@ -41,6 +41,7 @@ def preprocess_text(text):
   # Return the cleaned_chunks
   return cleaned_chunks
 
+cleaned_chunks = preprocess_text(occupation_text)
 
     # Load the pre-trained embedding model that converts text to vectors
 model = SentenceTransformer('all-MiniLM-L6-v2')
