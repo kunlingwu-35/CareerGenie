@@ -14,55 +14,79 @@ client = InferenceClient("Qwen/Qwen2.5-7B-Instruct", bill_to="kode-with-klossy")
 
 
 def respond(message, history):
-    messages = [{"role": "system", "content": "You are CareerCompass, a friendly and supportive career and education chatbot. 
-    Your main audience is middle school, high school, college, and university students who may be unsure about their future. 
-    Your job is to help users explore careers such as college and university majors, education pathways, skills, interests, high school courses, career goals, possible future jobs. 
-    Ask users questions about their favourite subjects, hobbies, strengths, interests, goals, preferred work environment, things they enjoy doing. When recommending careers, suggest around 3 to 5 possible careers, explain WHY each career could match the user's interests, mention possible majors or education pathways related to those careers, and ask helpful follow-up questions to learn more about the user. 
-    Do not tell users that there is only one correct career for them. 
-    Keep responses friendly, clear, supportive, and easy for students to understand. 
-    If the user says they do not know what career they want, guide them by asking questions instead of immediately giving random careers. 
-    If discussing salaries, admission requirements, university programs, or job outlooks, remind users that information can change and should be checked using reliable or official sources. 
-    Stay focused mainly on careers, education, majors, skills, and future planning."}]
+
+    messages = [
+        {
+            "role": "system",
+            "content": """
+You are CareerCompass, a friendly and supportive career and education chatbot for students.
+
+Help students explore careers, college and university majors, education pathways, skills, interests, and future goals.
+
+Ask users about their favourite subjects, hobbies, strengths, interests, goals, and preferred work environment.
+
+When recommending careers:
+- Suggest 3 to 5 possible careers.
+- Explain why each career may fit the user's interests.
+- Suggest related majors or education pathways.
+- Ask a helpful follow-up question.
+
+If a user does not know what career they want, ask them questions about themselves before making recommendations.
+
+Keep your responses friendly, clear, supportive, and easy for students to understand.
+
+Do not tell users that there is only one correct career for them.
+
+If you discuss salaries, admission requirements, university programs, or job outlooks, remind users that information can change and should be verified using reliable or official sources.
+
+Stay focused on careers, education, majors, skills, and future planning.
+"""
+        }
+    ]
 
     if history:
         messages.extend(history)
 
-    messages.append({"role": "user", "content": message})
+    messages.append(
+        {
+            "role": "user",
+            "content": message
+        }
+    )
 
     response = client.chat_completion(
         messages,
-        max_tokens=700, temperature=0.7
+        max_tokens=700,
+        temperature=0.7
     )
 
     return response.choices[0].message.content.strip()
+
 
 with gr.Blocks() as app:
 
     gr.Markdown(
         """
-        Career Genie 
-            
-        Explore your future with confidence.
+    Career Genie
 
-        CareerCompass helps students discover careers, majors, and education pathways based on their interests, strengths, favourite subjects, and goals.
+    Find your path. Explore your future.
 
-        Not sure where to start? Try one of the example questions below!
-        """
+CareerCompass helps students explore careers, majors, and educational pathways based on their interests, strengths, favourite subjects, and goals.
+
+Not sure where to begin? Try one of the questions below!
+"""
     )
 
- chatbot = gr.ChatInterface(
+    chatbot = gr.ChatInterface(
         fn=respond,
-
-    examples=[
-            "I like biology and helping people. What careers could fit me?",
-            "I enjoy coding and art. What careers combine both?",
+        examples=[
             "I don't know what career I want.",
-            "What majors should I explore if I like math?",
-            "I like technology but I also want to work with people."
+            "I love biology and helping people. What careers could fit me?",
+            "I like coding and art. What careers combine both?",
+            "What majors should I explore if I enjoy math?",
+            "I like technology but also want to work with people."
         ]
- )
+    )
 
-chatbot.launch()
 
-# TODO: This is just a starting point! Customize the system prompt,
-# the model, and the interface to make this project your own!
+app.launch()
