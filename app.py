@@ -3,6 +3,9 @@ from huggingface_hub import InferenceClient
 import pandas as pd 
 
 #copy/paste from previous Semantic search assignment
+!pip install -q sentence-transformers
+from sentence_transformers import SentenceTransformer  #turns sentences into vectors
+import torch
 
 with open("occupation_file", "r", encoding="utf-8") as file:
   # Read the entire contents of the file and store it in a variable
