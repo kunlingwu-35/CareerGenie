@@ -23,29 +23,36 @@ def respond(message, history):
 
     response = client.chat_completion(
         messages,
-        max_tokens=350, temperature=0.7
+        max_tokens=700, temperature=0.7
     )
 
     return response.choices[0].message.content.strip()
 
-chatbot = gr.ChatInterface(
-    fn=respond,
-    title="Career Genie"
+with gr.Blocks() as app:
 
-    description"""
-    Not sure what you want to do in the future?
+    gr.Markdown(
+        """
+        Career Genie 
+            
+        Explore your future with confidence.
 
-    Career Genie helps you explore careers, majors, and education pathways based on your interests, strengths, and goals.
-    """,
+        CareerCompass helps students discover careers, majors, and education pathways based on their interests, strengths, favourite subjects, and goals.
 
-    examples=[
-        "I love biology and helping people. What careers might fit me?"
-        "I like coding and art. What careers may combine both?"
-        "I don't know what I want to do in the future."
-        "What majors should I explore if I enjoy math?"
-        "I enjoy working with people, but also love technology."
-    ]
-)
+        Not sure where to start? Try one of the example questions below!
+        """
+    )
+
+ chatbot = gr.ChatInterface(
+        fn=respond,
+
+        examples=[
+            "I like biology and helping people. What careers could fit me?",
+            "I enjoy coding and art. What careers combine both?",
+            "I don't know what career I want.",
+            "What majors should I explore if I like math?",
+            "I like technology but I also want to work with people."
+        ]
+    )
 
 chatbot.launch()
 
