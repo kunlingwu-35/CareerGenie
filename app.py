@@ -90,4 +90,16 @@ Not sure where to begin? Try one of the questions below!
     )
 
 
+
+#kunling's part starts here: 
+
+
+df = pd.read_csv(
+    "hf://datasets/Kl80008/onet-career-data/occupation_data.csv"
+)
+
+print("ROWS:", len(df))
+print("COLUMNS:", df.columns.tolist())
+print(df.head())
+
 app.launch()
