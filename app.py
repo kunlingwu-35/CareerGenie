@@ -489,6 +489,9 @@ with gr.Blocks(
         """
         <div id="hero">
 
+            <img src="file= Career (1).png" 
+                style="width:100px; height:100px; object-fit:contain;">
+
             <div style="font-size:60px;">
                 
             </div>
