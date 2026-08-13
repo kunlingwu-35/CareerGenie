@@ -485,28 +485,26 @@ with gr.Blocks(
 
     # HERO / BANNER
 
-    gr.HTML(
+    with gr.Column(elem_id="hero"):
+
+    gr.Image(
+        "Career (1).png",
+        show_label=False,
+        show_download_button=False,
+        container=False,
+        width=200
+    )
+
+    gr.Markdown(
         """
-        <div id="hero">
+# Career Genie
 
-            <img src="file=Career (1).png" style="width:2000px; height:2000px; object-fit:contain;">
+### Your future, one question at a time.
 
-            <div style="font-size:60px;">
-                
-            </div>
-
-            <h1>Career Genie</h1>
-
-            <h2>Your future, one question at a time.</h2>
-
-            <p>
-                Discover careers, majors, educational pathways,
-                and possibilities based on your interests,
-                strengths, personality, and goals.
-            </p>
-
-        </div>
-        """
+Discover careers, majors, educational pathways,
+and possibilities based on your interests,
+strengths, personality, and goals.
+"""
     )
 
 
