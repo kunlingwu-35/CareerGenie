@@ -35,7 +35,22 @@ college_df = college_df[
     ]
 ]
 
-print(college_df.head())
+college_chunks = []
+
+for _, row in college_df.iterrows():
+
+    text = (
+        f"College: {row['INSTNM']} | "
+        f"Major: {row['CIPDESC']} | "
+        f"Degree: {row['CREDDESC']} | "
+        f"CIP Code: {row['CIPCODE']} | "
+        f"Graduates: {row['IPEDSCOUNT2']} | "
+        f"Median earnings 4 years after completion: {row['EARN_MDN_4YR']}"
+    )
+
+    college_chunks.append(text)
+
+print(college_chunks[:5])
 
 def preprocess_text(text):
   # Strip extra whitespace from the beginning and the end of the text
