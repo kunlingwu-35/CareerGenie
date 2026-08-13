@@ -489,7 +489,7 @@ with gr.Blocks(
         """
         <div id="hero">
 
-            <img src="file=logo.png" 
+            <img src="file=Career (1).png" 
                 style="width:200px; height:200px; object-fit:contain;">
 
             <div style="font-size:60px;">
