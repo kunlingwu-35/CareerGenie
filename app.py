@@ -102,7 +102,9 @@ def create_embeddings(text_chunks):
   return chunk_embeddings
 
 # Call the create_embeddings function and store the result in a new chunk_embeddings variable
-chunk_embeddings = create_embeddings(cleaned_chunks) # Complete this line
+all_chunks = cleaned_chunks + college_chunks
+
+chunk_embeddings = create_embeddings(all_chunks) # Complete this line
 
 
 # Define a function to find the most relevant text chunks for a given query, chunk_embeddings, and text_chunks
@@ -156,7 +158,7 @@ client = InferenceClient("Qwen/Qwen2.5-7B-Instruct", bill_to="kode-with-klossy")
 
 def respond(message, history):
 
-    occupation_chunks = get_top_chunks(message, chunk_embeddings, cleaned_chunks)
+    occupation_chunks = get_top_chunks(message, chunk_embeddings, all_chunks)
     
     messages = [
         {
