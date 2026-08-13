@@ -490,7 +490,7 @@ with gr.Blocks(
         <div id="hero">
 
             <img src="file= logo.png" 
-                style="width:100px; height:100px; object-fit:contain;">
+                style="width:200px; height:200px; object-fit:contain;">
 
             <div style="font-size:60px;">
                 
