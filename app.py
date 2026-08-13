@@ -16,11 +16,14 @@ df = pd.read_excel("CIP2020_SOC2018_Crosswalk.xlsx")
 cip_text = df.to_string(index=False)
 occupation_text = occupation_text + "\n" + cip_text
 
-#add college major into occupation_file
+# #add college major into occupation_file
+# college_df = pd.read_csv("Most-Recent-Cohorts-Field-of-Study.csv")
+# college_text = college_df.to_string(index=False)
+# occupation_text = occupation_text + "\n" + college_text
 college_df = pd.read_csv("Most-Recent-Cohorts-Field-of-Study.csv")
-college_text = college_df.to_string(index=False)
 
-occupation_text = occupation_text + "\n" + college_text
+print("COLLEGE COLUMNS:")
+print(college_df.columns.tolist())
 
 def preprocess_text(text):
   # Strip extra whitespace from the beginning and the end of the text
