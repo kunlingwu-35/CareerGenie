@@ -1,5 +1,3 @@
-import convert_cip_spreadsheet_to_text
-
 import gradio as gr
 from huggingface_hub import InferenceClient
 import pandas as pd 
@@ -12,6 +10,11 @@ import torch
 with open("occupation_file", "r", encoding="utf-8") as file:
   # Read the entire contents of the file and store it in a variable
   occupation_text = file.read()
+
+df = pd.read_excel("CIP2020_SOC2018_Crosswalk.xlsx")
+cip_text = df.to_string(index=False)
+occupation_text = occupation_text + "\n" + cip_text
+
 
 def preprocess_text(text):
   # Strip extra whitespace from the beginning and the end of the text
