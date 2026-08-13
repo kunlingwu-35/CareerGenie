@@ -20,10 +20,22 @@ occupation_text = occupation_text + "\n" + cip_text
 # college_df = pd.read_csv("Most-Recent-Cohorts-Field-of-Study.csv")
 # college_text = college_df.to_string(index=False)
 # occupation_text = occupation_text + "\n" + college_text
+
 college_df = pd.read_csv("Most-Recent-Cohorts-Field-of-Study.csv")
 
-print("COLLEGE COLUMNS:")
-print(college_df.columns.tolist())
+college_df = college_df[
+    [
+        "INSTNM",
+        "CIPCODE",
+        "CIPDESC",
+        "CREDDESC",
+        "IPEDSCOUNT1",
+        "IPEDSCOUNT2",
+        "EARN_MDN_4YR"
+    ]
+]
+
+print(college_df.head())
 
 def preprocess_text(text):
   # Strip extra whitespace from the beginning and the end of the text
