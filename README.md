@@ -1,4 +1,4 @@
-# Career Genie Chatbot: Kode with Klossy Group D4 2026
+# 🧞‍♀️Career Genie Chatbot: Kode with Klossy Group D4 2026
 
 Career Genie is an AI-powered web application designed to help identify what your dream career is, and create a roadmap to make your wish come true! 
 
