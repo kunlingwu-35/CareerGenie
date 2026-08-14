@@ -8,7 +8,7 @@ Career Genie is an AI-powered web application designed to help identify what you
 
 !Screenshot of my chatbot(screenshot.png)
 
-## What it does
+## 🔮 What it does
 
 
 - Feature 1: A Personality Quiz at the start of the user journey to analyze their personality traits to help determine the best fit major.
@@ -18,7 +18,7 @@ Helps find best colleges offering the major
 Provides resources to guide user]
 - Feature 3: A quickNotes tab for user to record down careers of interest
 
-## How it works
+## 💡 How it works
 
 * Generative AI for personalized conversations.
 * Uses user’s hobbies, goals, aspirations, and strengths and context.
@@ -29,18 +29,18 @@ Provides resources to guide user]
 * Our team gathered structured career and education information to ground our project in reliable data.
 * Our team organized larger career information into smaller and relevant sections that are easier to work with (Information Chunking)]
 
-## Built with
+## 🗒️ Built with
 
 - **Gradio** — the chatbot interface
 - **Hugging Face Inference Providers** — the AI model Qwen/Qwen2.5-7B-Instruct is used for generating personalized responses
 - **Sentence Transformers** — converting user queries and career/major data into embeddings for semantic search
 - **Pandas** - loading, cleaning, and organizing career and college datasets
 
-## What I learned
+## 🔍 What I learned
 
 The hardest part of building this for me was integrating databases into text format and breaking down into chunks. I had some trouble understanding the code, but working through them eventually helped with that. 
 
-## About
+## 💚 About
 
 Built at **Kode With Klossy** (https://www.kodewithklossy.com) AI/ML Camp,
 Summer 2026, by **Kunling Wu, Niral J., Julia R., Soha K.**.
