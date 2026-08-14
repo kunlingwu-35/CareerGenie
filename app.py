@@ -317,419 +317,980 @@ def clear_saved():
 # -----------------------------
 
 css = """
+css = """
 
-.gradio-container {
-    max-width: 1150px !important;
-    margin: auto !important;
+:root {
+    --bg-main: #eef8f5;
+    --bg-second: #edf3ff;
+    --bg-third: #f6f0ff;
+
+    --card: #ffffff;
+    --text-main: #22333c;
+    --text-secondary: #63747f;
+
+    --green: #4c9f8d;
+    --green-dark: #34796b;
+
+    --blue: #6789c8;
+    --purple: #a586c6;
+
+    --border: #dce9e5;
+    --shadow: rgba(43, 74, 70, 0.10);
 }
+
 
 body {
-    background: linear-gradient(135deg, #eef9f5, #edf4ff);
+    background:
+        radial-gradient(
+            circle at 10% 8%,
+            rgba(200, 239, 226, 0.90),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(209, 222, 255, 0.85),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            var(--bg-main),
+            var(--bg-second),
+            var(--bg-third)
+        ) !important;
+
+    color: var(--text-main);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
+
+
+.gradio-container {
+    max-width: 1200px !important;
+    margin: auto !important;
+    padding: 24px 18px 48px !important;
+    background: transparent !important;
+}
+
 
 #hero {
-    background: linear-gradient(135deg, #cfeee2, #d8e8ff);
-    border-radius: 30px;
-    padding: 45px;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d5f2e8,
+            #dceaff,
+            #eee3ff
+        );
+
+    border-radius: 32px;
+    padding: 42px;
     text-align: center;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+    margin-bottom: 22px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+        0 18px 50px
+        rgba(45, 76, 73, 0.12);
 }
+
+
+#hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    right: -90px;
+    top: -110px;
+
+    background:
+        rgba(255, 255, 255, 0.26);
+}
+
+
+#hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    left: -70px;
+    bottom: -100px;
+
+    background:
+        rgba(255, 255, 255, 0.20);
+}
+
 
 #hero h1 {
-    font-size: 48px;
-    margin-bottom: 5px;
+    position: relative;
+    z-index: 2;
+
+    font-size: 55px;
+    line-height: 1;
+
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    letter-spacing: -2px;
+
+    color: #244148;
 }
 
-#hero h2 {
-    font-weight: 400;
-    margin-top: 5px;
+
+#hero h3 {
+    position: relative;
+    z-index: 2;
+
+    color: #536a78;
+
+    font-weight: 500;
+
+    margin-top: 8px;
 }
+
+
+#hero img {
+    position: relative;
+    z-index: 2;
+
+    border-radius: 24px !important;
+
+    max-height: 175px !important;
+
+    object-fit: contain !important;
+}
+
 
 #accessibility {
-    background: white;
-    padding: 18px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #e5e7eb;
+    background:
+        rgba(255, 255, 255, 0.88);
+
+    padding: 21px;
+
+    border-radius: 23px;
+
+    margin-bottom: 22px;
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:
+        0 8px 28px
+        rgba(45, 76, 72, 0.07);
 }
+
 
 .feature-card {
-    background: white;
-    border-radius: 20px;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid #e5e7eb;
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f9fcfb
+        );
+
+    border-radius: 21px;
+
+    padding: 22px;
+
+    border:
+        1px solid
+        var(--border);
+
     min-height: 145px;
+
+    box-shadow:
+        0 8px 24px
+        rgba(45, 75, 72, 0.07);
+
+    transition:
+        transform 0.20s ease,
+        box-shadow 0.20s ease;
 }
+
+
+.feature-card:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 14px 32px
+        rgba(45, 75, 72, 0.12);
+}
+
 
 #chat-section {
-    background: white;
-    border-radius: 22px;
-    padding: 18px;
-    margin-top: 20px;
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f9fcfd
+        );
+
+    border-radius: 24px;
+
+    padding: 23px;
+
+    margin-top: 23px;
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:
+        0 10px 34px
+        var(--shadow);
 }
+
 
 #quiz-section {
-    background: #f7fbff;
-    border-radius: 22px;
-    padding: 22px;
-    margin-top: 25px;
+    background:
+        linear-gradient(
+            145deg,
+            #f8fcff,
+            #f3f8ff
+        );
+
+    border-radius: 24px;
+
+    padding: 23px;
+
+    margin-top: 23px;
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:
+        0 10px 34px
+        var(--shadow);
 }
+
 
 #saved-section {
-    background: #fffdf4;
-    border-radius: 22px;
-    padding: 22px;
-    margin-top: 25px;
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf7,
+            #faf8ef
+        );
+
+    border-radius: 24px;
+
+    padding: 23px;
+
+    margin-top: 23px;
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:
+        0 10px 34px
+        var(--shadow);
 }
 
+
 #resources-section {
-    background: #f3faf6;
-    border-radius: 22px;
-    padding: 22px;
-    margin-top: 25px;
+    background:
+        linear-gradient(
+            145deg,
+            #f7fcf9,
+            #f7f9ff
+        );
+
+    border-radius: 24px;
+
+    padding: 23px;
+
+    margin-top: 23px;
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:
+        0 10px 34px
+        var(--shadow);
 }
+
+
+button {
+    border-radius: 13px !important;
+
+    font-weight: 700 !important;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease !important;
+}
+
+
+button:hover {
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 6px 14px
+        rgba(45, 75, 72, 0.12);
+}
+
+
+.quiz-results {
+    background: white;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    margin-top: 12px;
+}
+
+
+.quiz-results strong {
+    color: var(--green-dark);
+}
+
+
+.saved-career-card {
+    background: white;
+
+    border:
+        1px solid
+        #e6e5d9;
+
+    border-radius: 15px;
+
+    padding: 13px 15px;
+
+    margin-top: 9px;
+
+    font-weight: 600;
+}
+
 
 .footer {
     text-align: center;
-    opacity: 0.7;
+
+    opacity: 0.72;
+
     font-size: 13px;
-    margin-top: 25px;
+
+    margin-top: 28px;
+
+    padding-bottom: 12px;
 }
 
-.dark-mode {
-    background: #121212 !important;
-    color: white !important;
+
+body.dark-mode {
+    --card: #202833;
+    --text-main: #edf3f7;
+    --text-secondary: #b8c4cc;
+    --border: #3e4a56;
+    --shadow: rgba(0, 0, 0, 0.28);
+
+    background:
+        radial-gradient(
+            circle at 10% 8%,
+            rgba(39, 86, 75, 0.60),
+            transparent 31%
+        ),
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(49, 68, 112, 0.58),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #12171d,
+            #171e27,
+            #1d1924
+        ) !important;
 }
 
-.dark-mode .gradio-container {
-    background: #121212 !important;
-    color: white !important;
+
+.dark-mode #hero {
+    background:
+        linear-gradient(
+            135deg,
+            #22483f,
+            #293a57,
+            #40324f
+        );
+
+    border-color:
+        #465360;
 }
+
+
+.dark-mode #hero h1 {
+    color: #f3f7f8;
+}
+
+
+.dark-mode #hero h3 {
+    color: #cad6de;
+}
+
+
+.dark-mode #accessibility,
+.dark-mode .feature-card,
+.dark-mode #chat-section,
+.dark-mode #quiz-section,
+.dark-mode #saved-section,
+.dark-mode #resources-section,
+.dark-mode .quiz-results,
+.dark-mode .saved-career-card {
+    background:
+        #202833 !important;
+
+    color:
+        #edf3f7 !important;
+
+    border-color:
+        #3e4a56 !important;
+}
+
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode p,
+.dark-mode label,
+.dark-mode span {
+    color:
+        #edf3f7;
+}
+
 
 .grayscale-mode {
-    filter: grayscale(100%) !important;
+    filter:
+        grayscale(100%);
 }
+
 
 .large-text {
-    font-size: 120% !important;
+    font-size:
+        120% !important;
 }
 
+
+.large-text input,
+.large-text textarea,
+.large-text button {
+    font-size:
+        110% !important;
+}
+
+
 .color-friendly {
-    background: #fff3c4 !important;
-    color: #003366 !important;
+    background:
+        linear-gradient(
+            145deg,
+            #fff7d6,
+            #edf5ff
+        ) !important;
+}
+
+
+.high-contrast {
+    --text-main: #000000;
+    --text-secondary: #111111;
+    --border: #000000;
+}
+
+
+body.high-contrast {
+    background:
+        #ffffff !important;
+}
+
+
+.high-contrast #accessibility,
+.high-contrast .feature-card,
+.high-contrast #chat-section,
+.high-contrast #quiz-section,
+.high-contrast #saved-section,
+.high-contrast #resources-section {
+    border:
+        2px solid
+        #000000 !important;
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .gradio-container {
+        padding:
+            12px
+            9px
+            35px
+            !important;
+    }
+
+
+    #hero {
+        padding:
+            29px
+            19px;
+    }
+
+
+    #hero h1 {
+        font-size:
+            43px;
+    }
 }
 
 """
 
-
-# -----------------------------
-# JAVASCRIPT FOR ACCESSIBILITY
-# -----------------------------
 
 js = """
 
 function careerLightMode() {
+
     document.body.classList.remove(
-        "dark-mode",
-        "grayscale-mode",
-        "color-friendly"
+        "dark-mode"
     );
+
 }
+
 
 function careerDarkMode() {
+
+    document.body.classList.add(
+        "dark-mode"
+    );
+
+}
+
+
+function careerGrayscale() {
+
+    document.body.classList.toggle(
+        "grayscale-mode"
+    );
+
+}
+
+
+function careerColorFriendly() {
+
     document.body.classList.remove(
-        "grayscale-mode",
+        "dark-mode"
+    );
+
+    document.body.classList.toggle(
         "color-friendly"
     );
 
-    document.body.classList.add("dark-mode");
 }
 
-function careerGrayscale() {
-    document.body.classList.toggle("grayscale-mode");
-}
-
-function careerColorFriendly() {
-    document.body.classList.remove("dark-mode");
-    document.body.classList.toggle("color-friendly");
-}
 
 function careerLargeText() {
-    document.body.classList.toggle("large-text");
+
+    document.body.classList.toggle(
+        "large-text"
+    );
+
 }
 
+
+function careerHighContrast() {
+
+    document.body.classList.toggle(
+        "high-contrast"
+    );
+
+}
+
+
 function careerReset() {
+
     document.body.classList.remove(
         "dark-mode",
         "grayscale-mode",
         "color-friendly",
-        "large-text"
+        "large-text",
+        "high-contrast"
     );
+
 }
 
 """
 
 
-# -----------------------------
-# APP
-# -----------------------------
-
 with gr.Blocks(
     css=css,
     js=js,
-    theme=gr.themes.Soft()
+    theme=gr.themes.Soft(),
+    title="Career Genie"
 ) as app:
 
 
-    # HERO / BANNER
+    with gr.Column(
+        elem_id="hero"
+    ):
 
-    with gr.Column(elem_id="hero"):
+        gr.Image(
+            "Career (1).png",
+            show_label=False,
+            show_download_button=False,
+            container=False,
+            height=170
+        )
 
-    gr.Image(
-        "Career (1).png",
-        show_label=False,
-        show_download_button=False,
-        container=False,
-        width=200
-    )
-
-    gr.Markdown(
-        """
+        gr.Markdown(
+            """
 # Career Genie
 
 ### Your future, one question at a time.
 
-Discover careers, majors, educational pathways,
-and possibilities based on your interests,
-strengths, personality, and goals.
+Discover careers, majors, educational pathways, and possibilities based on your interests, strengths, personality, and goals.
 """
-    )
+        )
 
 
-    # ACCESSIBILITY
-
-    with gr.Column(elem_id="accessibility"):
+    with gr.Column(
+        elem_id="accessibility"
+    ):
 
         gr.Markdown(
             """
-###  Accessibility & Display
+### Accessibility and Display
 
 Customize Career Genie so the app is easier and more comfortable for you to use.
 """
         )
 
+
         with gr.Row():
 
-            light_button = gr.Button(" Light")
-            dark_button = gr.Button(" Dark")
-            grayscale_button = gr.Button(" Grayscale")
-            color_button = gr.Button(" Colour-Friendly")
-            text_button = gr.Button(" Larger Text")
-            reset_button = gr.Button(" Reset")
+            light_button = gr.Button(
+                "Light Mode"
+            )
+
+            dark_button = gr.Button(
+                "Dark Mode"
+            )
+
+            grayscale_button = gr.Button(
+                "Grayscale"
+            )
+
+
+        with gr.Row():
+
+            color_button = gr.Button(
+                "Colour-Friendly"
+            )
+
+            text_button = gr.Button(
+                "Larger Text"
+            )
+
+            contrast_button = gr.Button(
+                "High Contrast"
+            )
+
+            reset_button = gr.Button(
+                "Reset Display"
+            )
 
 
     light_button.click(
         fn=None,
-        js="careerLightMode"
+        js="() => careerLightMode()"
     )
+
 
     dark_button.click(
         fn=None,
-        js="careerDarkMode"
+        js="() => careerDarkMode()"
     )
+
 
     grayscale_button.click(
         fn=None,
-        js="careerGrayscale"
+        js="() => careerGrayscale()"
     )
+
 
     color_button.click(
         fn=None,
-        js="careerColorFriendly"
+        js="() => careerColorFriendly()"
     )
+
 
     text_button.click(
         fn=None,
-        js="careerLargeText"
+        js="() => careerLargeText()"
     )
+
+
+    contrast_button.click(
+        fn=None,
+        js="() => careerHighContrast()"
+    )
+
 
     reset_button.click(
         fn=None,
-        js="careerReset"
+        js="() => careerReset()"
     )
 
 
-    # FEATURE CARDS
+    gr.Markdown(
+        """
+## Explore Your Future
 
-    gr.Markdown("##  Explore Your Future")
+Career Genie gives you different ways to discover careers and education pathways that could fit you.
+"""
+    )
 
 
     with gr.Row():
 
         gr.Markdown(
             """
-###  Explore Careers
+### Explore Careers
 
-Discover careers based on your interests, strengths, and goals.
+Discover careers based on your interests, strengths, favourite subjects, and future goals.
             """,
             elem_classes="feature-card"
         )
 
+
         gr.Markdown(
             """
-###  Explore Majors
+### Explore Majors
 
 Learn about college and university programs connected to different careers.
             """,
             elem_classes="feature-card"
         )
 
+
         gr.Markdown(
             """
-###  Find Your Path
+### Find Your Path
 
-Not sure what you want to do yet? Career Genie can help you narrow down your options.
+Not sure what you want to do yet? Use Career Genie to narrow down possibilities.
             """,
             elem_classes="feature-card"
         )
 
 
-    # CHATBOT
+        gr.Markdown(
+            """
+### Build Your Future
 
-    with gr.Column(elem_id="chat-section"):
+Explore skills, education pathways, and next steps connected to careers you are interested in.
+            """,
+            elem_classes="feature-card"
+        )
+
+
+    with gr.Column(
+        elem_id="chat-section"
+    ):
 
         gr.Markdown(
             """
-##  Chat with Career Genie
+## Chat with Career Genie
 
-Tell Career Genie about your interests, strengths, favourite subjects, or future goals.
+Tell Career Genie about your interests, strengths, favourite subjects, hobbies, or future goals.
 """
         )
 
+
         chatbot = gr.ChatInterface(
             fn=respond,
+
             examples=[
-                "I don't know what career I want.",
+                "I do not know what career I want.",
                 "I love biology and helping people. What careers could fit me?",
                 "I enjoy coding and art. What careers combine both?",
                 "What majors should I explore if I enjoy math?",
-                "I like technology but also want to work with people."
+                "I like technology but also want to work with people.",
+                "What careers combine science and technology?",
+                "What could I study if I want to work in healthcare but also enjoy engineering?"
             ]
         )
 
 
-    # PERSONALITY QUIZ
-
-    with gr.Column(elem_id="quiz-section"):
+    with gr.Column(
+        elem_id="quiz-section"
+    ):
 
         gr.Markdown(
             """
-##  Career Personality & Interests Quiz
+## Career Personality and Interests Quiz
 
-Answer a few questions and Career Genie will suggest possible paths to explore.
+Answer a few questions and Career Genie will suggest possible paths for you to explore.
 """
         )
 
-        subject = gr.Dropdown(
-            choices=[
-                "Science / Biology",
-                "Math",
-                "Technology",
-                "Art / Design",
-                "Business"
-            ],
-            label="What subject do you enjoy most?"
+
+        with gr.Row():
+
+            subject = gr.Dropdown(
+                choices=[
+                    "Science / Biology",
+                    "Math",
+                    "Technology",
+                    "Art / Design",
+                    "Business"
+                ],
+
+                label=
+                    "What subject do you enjoy most?"
+            )
+
+
+            work_style = gr.Radio(
+                choices=[
+                    "Working with people",
+                    "Working independently",
+                    "A mix of both"
+                ],
+
+                label=
+                    "How do you prefer to work?"
+            )
+
+
+        with gr.Row():
+
+            interest = gr.Dropdown(
+                choices=[
+                    "Helping people",
+                    "Building things",
+                    "Solving problems",
+                    "Creating",
+                    "Working with technology"
+                ],
+
+                label=
+                    "Which activity sounds most like you?"
+            )
+
+
+            value = gr.Dropdown(
+                choices=[
+                    "Helping others",
+                    "Creativity",
+                    "High earning potential",
+                    "Work-life balance",
+                    "Making an impact"
+                ],
+
+                label=
+                    "What matters most to you in a future career?"
+            )
+
+
+        quiz_button = gr.Button(
+            "Find My Career Matches"
         )
 
-        work_style = gr.Radio(
-            choices=[
-                "Working with people",
-                "Working independently",
-                "A mix of both"
-            ],
-            label="How do you prefer to work?"
+
+        quiz_output = gr.Markdown(
+            elem_classes="quiz-results"
         )
-
-        interest = gr.Dropdown(
-            choices=[
-                "Helping people",
-                "Building things",
-                "Solving problems",
-                "Creating",
-                "Working with technology"
-            ],
-            label="Which activity sounds most like you?"
-        )
-
-        value = gr.Dropdown(
-            choices=[
-                "Helping others",
-                "Creativity",
-                "High earning potential",
-                "Work-life balance",
-                "Making an impact"
-            ],
-            label="What matters most to you in a future career?"
-        )
-
-        quiz_button = gr.Button(" Find My Career Matches")
-
-        quiz_output = gr.Markdown()
 
 
         quiz_button.click(
             fn=quiz_result,
+
             inputs=[
                 subject,
                 work_style,
                 interest,
                 value
             ],
-            outputs=quiz_output
+
+            outputs=
+                quiz_output
         )
 
 
-    # SAVE CAREERS
-
-    with gr.Column(elem_id="saved-section"):
+    with gr.Column(
+        elem_id="saved-section"
+    ):
 
         gr.Markdown(
             """
-##  Save Careers
+## Save Careers
 
 Found something interesting?
 
-Type the career below and save it so you can keep track of careers you want to research later.
+Save careers you want to remember so you can research and compare them later.
 """
         )
 
-        saved_state = gr.State([])
+
+        saved_state = gr.State(
+            []
+        )
+
 
         career_input = gr.Textbox(
-            label="Career to save",
-            placeholder="Example: Biomedical Engineer"
+            label=
+                "Career to save",
+
+            placeholder=
+                "Example: Biomedical Engineer"
         )
+
 
         with gr.Row():
 
-            save_button = gr.Button(" Save Career")
+            save_button = gr.Button(
+                "Save Career"
+            )
 
-            clear_button = gr.Button(" Clear Saved Careers")
+            clear_button = gr.Button(
+                "Clear Saved Careers"
+            )
 
 
         saved_output = gr.JSON(
-            label="My Saved Careers"
+            label=
+                "My Saved Careers"
         )
 
 
         save_button.click(
             fn=save_career,
+
             inputs=[
                 career_input,
                 saved_state
             ],
+
             outputs=[
                 saved_state,
                 saved_output
@@ -739,6 +1300,7 @@ Type the career below and save it so you can keep track of careers you want to r
 
         clear_button.click(
             fn=clear_saved,
+
             outputs=[
                 saved_state,
                 saved_output
@@ -746,49 +1308,54 @@ Type the career below and save it so you can keep track of careers you want to r
         )
 
 
-    # LINKS / RESOURCES
-
-    with gr.Column(elem_id="resources-section"):
+    with gr.Column(
+        elem_id="resources-section"
+    ):
 
         gr.Markdown(
             """
-##  Continue Exploring
+## Continue Exploring
 
-Career Genie can help you discover possibilities, but you should always verify important career and education information using reliable sources.
+Career Genie can help you discover possibilities, but you should verify important career and education information using reliable official sources.
 
-### 🇨🇦 Government of Canada Job Bank
+### Government of Canada Job Bank
 
-Research occupations, wages, skills, requirements, and job outlooks.
+Research occupations, wages, skills, education requirements, and job outlooks.
 
 https://www.jobbank.gc.ca/
 
-###  Ontario Universities Info
+### Ontario Universities Info
 
 Explore Ontario university programs, prerequisites, and admission information.
 
 https://www.ouinfo.ca/
 
-###  Ontario Colleges
+### Ontario Colleges
 
 Explore college programs and pathways across Ontario.
 
 https://www.ontariocolleges.ca/
 
-###  How to use this section
+### How to use Career Genie
 
-If Career Genie recommends **Biomedical Engineering**, for example, you can search that career on Job Bank and then use Ontario Universities Info to explore related university programs.
+Start by telling Career Genie what you enjoy or what subjects you are interested in.
+
+If you are unsure, take the Career Personality and Interests Quiz.
+
+When you find a career that interests you, save it.
+
+Then ask Career Genie about the education pathway, related majors, useful skills, and similar careers.
+
+Finally, verify important information using official university, college, and career websites.
 """
         )
 
 
-    # FOOTER
-
     gr.Markdown(
         """
-Career Genie provides general educational guidance. Career information, salaries,
-admission requirements, and programs may change, so always verify important
-information using official sources.
+Career Genie provides general educational guidance. Career information, salaries, admission requirements, employment outlooks, and programs may change, so always verify important information using official sources.
         """,
+
         elem_classes="footer"
     )
 
