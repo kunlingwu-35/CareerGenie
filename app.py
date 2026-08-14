@@ -318,23 +318,36 @@ def clear_saved():
 
 css = """
 :root {
-    --bg-green: #edf8f4;
-    --bg-blue: #eef4ff;
-    --bg-purple: #f7f1ff;
+    --bg-main: #fff8fa;
+    --bg-secondary: #fff1f6;
+    --bg-accent: #fff8e8;
+
     --card: #ffffff;
-    --text: #24343d;
-    --muted: #647680;
-    --green: #4b9b89;
-    --green-dark: #317565;
-    --blue: #6688c5;
-    --border: #dce8e5;
-    --shadow: rgba(46, 74, 71, 0.10);
+    --card-soft: #fffafd;
+
+    --text-main: #4a2635;
+    --text-secondary: #765968;
+
+    --primary: #bd1855;
+    --primary-dark: #951344;
+    --primary-light: #f5b7cc;
+
+    --gold: #f4b72c;
+    --gold-dark: #d99b13;
+    --gold-soft: #fff0bd;
+
+    --border: #f0ccd9;
+
+    --shadow:
+        rgba(160, 29, 82, 0.10);
 }
+
 
 html,
 body {
     min-height: 100%;
 }
+
 
 body {
     margin: 0;
@@ -342,152 +355,227 @@ body {
     background:
         radial-gradient(
             circle at 10% 10%,
-            rgba(200, 240, 226, 0.85),
+            rgba(245, 183, 204, 0.45),
             transparent 32%
         ),
         radial-gradient(
             circle at 90% 15%,
-            rgba(207, 222, 255, 0.85),
+            rgba(244, 183, 44, 0.20),
             transparent 30%
         ),
         linear-gradient(
             145deg,
-            var(--bg-green),
-            var(--bg-blue),
-            var(--bg-purple)
+            var(--bg-main),
+            var(--bg-secondary),
+            var(--bg-accent)
         ) !important;
 
-    color: var(--text);
+    color:
+        var(--text-main);
 
     transition:
         background 0.3s ease,
         color 0.3s ease;
 }
 
+
 .gradio-container {
-    max-width: 1200px !important;
-    margin: auto !important;
-    padding: 24px 18px 50px !important;
-    background: transparent !important;
+    max-width:
+        1200px !important;
+
+    margin:
+        auto !important;
+
+    padding:
+        24px 18px 50px !important;
+
+    background:
+        transparent !important;
 }
 
+
 #hero {
-    position: relative;
-    overflow: hidden;
+    position:
+        relative;
+
+    overflow:
+        hidden;
 
     background:
         linear-gradient(
             135deg,
-            #d5f2e7,
-            #dce9ff,
-            #eee3ff
+            #fff8fb,
+            #fce1eb,
+            #fff1c9
         );
 
-    border-radius: 32px;
+    border-radius:
+        32px;
 
-    padding: 42px 30px;
+    padding:
+        42px 30px;
 
-    margin-bottom: 22px;
+    margin-bottom:
+        22px;
 
-    text-align: center;
+    text-align:
+        center;
 
     border:
         1px solid
-        rgba(255, 255, 255, 0.85);
+        rgba(189, 24, 85, 0.12);
 
     box-shadow:
         0 18px 50px
-        rgba(45, 76, 73, 0.13);
+        rgba(160, 29, 82, 0.12);
 }
+
 
 #hero::before {
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    width: 250px;
-    height: 250px;
+    width:
+        270px;
 
-    border-radius: 50%;
+    height:
+        270px;
 
-    right: -90px;
-    top: -110px;
+    border-radius:
+        50%;
+
+    right:
+        -100px;
+
+    top:
+        -120px;
 
     background:
-        rgba(255, 255, 255, 0.26);
+        rgba(244, 183, 44, 0.12);
 }
+
 
 #hero::after {
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    width: 190px;
-    height: 190px;
+    width:
+        210px;
 
-    border-radius: 50%;
+    height:
+        210px;
 
-    left: -70px;
-    bottom: -100px;
+    border-radius:
+        50%;
+
+    left:
+        -80px;
+
+    bottom:
+        -110px;
 
     background:
-        rgba(255, 255, 255, 0.20);
+        rgba(189, 24, 85, 0.08);
 }
+
 
 #hero h1 {
-    position: relative;
-    z-index: 2;
+    position:
+        relative;
 
-    font-size: 54px;
+    z-index:
+        2;
 
-    margin-top: 8px;
-    margin-bottom: 8px;
+    font-size:
+        55px;
 
-    line-height: 1;
+    margin-top:
+        8px;
 
-    letter-spacing: -2px;
+    margin-bottom:
+        8px;
 
-    color: #244148;
+    line-height:
+        1;
+
+    letter-spacing:
+        -2px;
+
+    color:
+        var(--primary);
 }
+
 
 #hero h3 {
-    position: relative;
-    z-index: 2;
+    position:
+        relative;
 
-    margin-top: 8px;
+    z-index:
+        2;
 
-    font-weight: 500;
+    margin-top:
+        8px;
 
-    color: #536a78;
+    font-weight:
+        500;
+
+    color:
+        var(--text-secondary);
 }
+
 
 #hero p {
-    position: relative;
-    z-index: 2;
+    position:
+        relative;
 
-    color: #607482;
+    z-index:
+        2;
+
+    color:
+        var(--text-secondary);
 }
+
 
 #hero img {
-    position: relative;
-    z-index: 2;
+    position:
+        relative;
 
-    border-radius: 24px !important;
+    z-index:
+        2;
 
-    max-height: 170px !important;
+    border-radius:
+        25px !important;
 
-    object-fit: contain !important;
+    max-height:
+        175px !important;
+
+    object-fit:
+        contain !important;
+
+    box-shadow:
+        0 12px 35px
+        rgba(160, 29, 82, 0.11);
 }
+
 
 #accessibility {
     background:
-        rgba(255, 255, 255, 0.90);
+        rgba(255, 255, 255, 0.92);
 
-    padding: 21px;
+    padding:
+        22px;
 
-    border-radius: 23px;
+    border-radius:
+        23px;
 
-    margin-bottom: 22px;
+    margin-bottom:
+        22px;
 
     border:
         1px solid
@@ -495,54 +583,79 @@ body {
 
     box-shadow:
         0 8px 28px
-        rgba(45, 76, 72, 0.07);
+        rgba(160, 29, 82, 0.07);
 }
+
+
+#accessibility h3 {
+    color:
+        var(--primary-dark);
+}
+
 
 .feature-card {
     background:
         linear-gradient(
             145deg,
             #ffffff,
-            #f9fcfb
+            #fff7fa
         );
 
-    border-radius: 21px;
+    border-radius:
+        21px;
 
-    padding: 22px;
+    padding:
+        22px;
 
     border:
         1px solid
         var(--border);
 
-    min-height: 145px;
+    min-height:
+        145px;
 
     box-shadow:
         0 8px 24px
-        rgba(45, 75, 72, 0.07);
+        rgba(160, 29, 82, 0.07);
 
     transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
 }
+
 
 .feature-card:hover {
     transform:
         translateY(-4px);
 
+    border-color:
+        #e59ab6;
+
     box-shadow:
         0 14px 32px
-        rgba(45, 75, 72, 0.12);
+        rgba(160, 29, 82, 0.13);
 }
+
+
+.feature-card h3 {
+    color:
+        var(--primary-dark);
+}
+
 
 #chat-section,
 #quiz-section,
 #saved-section,
 #resources-section {
-    border-radius: 24px;
+    border-radius:
+        24px;
 
-    padding: 23px;
+    padding:
+        24px;
 
-    margin-top: 23px;
+    margin-top:
+        23px;
 
     border:
         1px solid
@@ -553,67 +666,86 @@ body {
         var(--shadow);
 }
 
+
 #chat-section {
     background:
         linear-gradient(
             145deg,
             #ffffff,
-            #f9fcfd
+            #fff7fa
         );
 }
+
 
 #quiz-section {
     background:
         linear-gradient(
             145deg,
-            #f8fcff,
-            #f3f8ff
+            #fffafd,
+            #fff0f5
         );
 }
+
 
 #saved-section {
     background:
         linear-gradient(
             145deg,
             #fffdf7,
-            #faf8ef
+            #fff6d8
         );
 }
+
 
 #resources-section {
     background:
         linear-gradient(
             145deg,
-            #f7fcf9,
-            #f7f9ff
+            #ffffff,
+            #fff7fa
         );
 }
 
-button {
-    border-radius: 13px !important;
 
-    font-weight: 700 !important;
+#chat-section h2,
+#quiz-section h2,
+#saved-section h2,
+#resources-section h2 {
+    color:
+        var(--primary-dark);
+}
+
+
+button {
+    border-radius:
+        14px !important;
+
+    font-weight:
+        700 !important;
 
     transition:
         transform 0.15s ease,
-        box-shadow 0.15s ease !important;
+        box-shadow 0.15s ease,
+        border-color 0.15s ease !important;
 }
+
 
 button:hover {
     transform:
-        translateY(-1px);
+        translateY(-2px);
 
     box-shadow:
-        0 6px 14px
-        rgba(45, 75, 72, 0.12);
+        0 7px 16px
+        rgba(160, 29, 82, 0.13);
 }
+
 
 .primary-button {
     background:
         linear-gradient(
             135deg,
-            #4b9b89,
-            #6688c5
+            var(--primary),
+            #db4b7d
         ) !important;
 
     color:
@@ -621,87 +753,189 @@ button:hover {
 
     border:
         none !important;
+
+    box-shadow:
+        0 6px 16px
+        rgba(189, 24, 85, 0.20);
 }
+
+
+#accessibility button {
+    background:
+        #ffffff !important;
+
+    color:
+        var(--primary-dark) !important;
+
+    border:
+        1px solid
+        var(--border) !important;
+}
+
+
+#accessibility button:hover {
+    background:
+        #fff2f7 !important;
+
+    border-color:
+        #e69bb7 !important;
+}
+
+
+input,
+textarea {
+    border-radius:
+        14px !important;
+
+    border-color:
+        var(--border) !important;
+}
+
+
+input:focus,
+textarea:focus {
+    border-color:
+        var(--primary) !important;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(189, 24, 85, 0.10) !important;
+}
+
 
 #quiz-output {
     background:
-        rgba(255, 255, 255, 0.75);
+        rgba(255, 255, 255, 0.82);
 
-    border-radius: 17px;
+    border-radius:
+        18px;
 
-    padding: 15px;
+    padding:
+        17px;
 
     border:
         1px solid
         var(--border);
+
+    margin-top:
+        10px;
 }
+
+
+#quiz-output strong {
+    color:
+        var(--primary-dark);
+}
+
 
 .footer {
-    text-align: center;
+    text-align:
+        center;
 
-    opacity: 0.72;
+    font-size:
+        13px;
 
-    font-size: 13px;
+    color:
+        var(--text-secondary);
 
-    margin-top: 28px;
+    margin-top:
+        30px;
 
-    padding-bottom: 12px;
+    padding:
+        18px 15px;
+
+    border-top:
+        1px solid
+        rgba(189, 24, 85, 0.12);
 }
 
+
 body.dark-mode {
-    --card: #202833;
-    --text: #edf3f7;
-    --muted: #b8c4cc;
-    --border: #3e4a56;
-    --shadow: rgba(0, 0, 0, 0.28);
+    --card:
+        #271b21;
+
+    --card-soft:
+        #302029;
+
+    --text-main:
+        #fff2f6;
+
+    --text-secondary:
+        #dcbfca;
+
+    --primary:
+        #ef6b9c;
+
+    --primary-dark:
+        #ff91b7;
+
+    --primary-light:
+        #8f3456;
+
+    --gold:
+        #f6c54c;
+
+    --gold-soft:
+        #4d4023;
+
+    --border:
+        #60404d;
+
+    --shadow:
+        rgba(0, 0, 0, 0.30);
 
     background:
         radial-gradient(
-            circle at 10% 8%,
-            rgba(39, 86, 75, 0.60),
-            transparent 31%
+            circle at 10% 10%,
+            rgba(125, 34, 68, 0.45),
+            transparent 32%
         ),
         radial-gradient(
             circle at 90% 15%,
-            rgba(49, 68, 112, 0.58),
+            rgba(134, 100, 28, 0.28),
             transparent 30%
         ),
         linear-gradient(
             145deg,
-            #12171d,
-            #171e27,
-            #1d1924
+            #171116,
+            #21161d,
+            #251d16
         ) !important;
 }
 
+
 .dark-mode .gradio-container {
     color:
-        #edf3f7 !important;
+        var(--text-main) !important;
 }
+
 
 .dark-mode #hero {
     background:
         linear-gradient(
             135deg,
-            #22483f,
-            #293a57,
-            #40324f
+            #391d2a,
+            #4c2234,
+            #493b20
         );
 
     border-color:
-        #465360;
+        #684452;
 }
+
 
 .dark-mode #hero h1 {
     color:
-        #f3f7f8;
+        #ff8ab4;
 }
+
 
 .dark-mode #hero h3,
 .dark-mode #hero p {
     color:
-        #cad6de;
+        #e6cbd5;
 }
+
 
 .dark-mode #accessibility,
 .dark-mode .feature-card,
@@ -711,47 +945,75 @@ body.dark-mode {
 .dark-mode #resources-section,
 .dark-mode #quiz-output {
     background:
-        #202833 !important;
+        #271b21 !important;
 
     color:
-        #edf3f7 !important;
+        #fff2f6 !important;
 
     border-color:
-        #3e4a56 !important;
+        #60404d !important;
 }
+
 
 .dark-mode h1,
 .dark-mode h2,
 .dark-mode h3,
-.dark-mode h4,
+.dark-mode h4 {
+    color:
+        #ff91b7 !important;
+}
+
+
 .dark-mode p,
 .dark-mode label,
 .dark-mode span {
     color:
-        #edf3f7;
+        #e6cbd5;
 }
+
 
 .dark-mode input,
 .dark-mode textarea {
     background:
-        #29333f !important;
+        #34232b !important;
 
     color:
-        #edf3f7 !important;
+        #fff2f6 !important;
 
     border-color:
-        #465462 !important;
+        #684b57 !important;
 }
+
+
+.dark-mode #accessibility button {
+    background:
+        #34232b !important;
+
+    color:
+        #ffd5e4 !important;
+
+    border-color:
+        #684b57 !important;
+}
+
+
+.dark-mode #accessibility button:hover {
+    background:
+        #452936 !important;
+}
+
 
 .grayscale-mode {
     filter:
         grayscale(100%);
 }
 
+
 .large-text {
     font-size:
         120% !important;
 }
+
 
 .large-text input,
 .large-text textarea,
@@ -760,14 +1022,44 @@ body.dark-mode {
         110% !important;
 }
 
-.color-friendly {
+
+body.color-friendly {
     background:
         linear-gradient(
             145deg,
-            #fff4c7,
-            #e9f3ff
+            #fff7d6,
+            #fffdf4,
+            #e8f4ff
         ) !important;
 }
+
+
+.color-friendly #hero {
+    background:
+        linear-gradient(
+            135deg,
+            #fff4bd,
+            #ffffff,
+            #dbeeff
+        );
+}
+
+
+.color-friendly #hero h1 {
+    color:
+        #7a2250;
+}
+
+
+.color-friendly .feature-card,
+.color-friendly #chat-section,
+.color-friendly #quiz-section,
+.color-friendly #saved-section,
+.color-friendly #resources-section {
+    border-color:
+        #c4aa52 !important;
+}
+
 
 body.high-contrast {
     background:
@@ -777,16 +1069,47 @@ body.high-contrast {
         #000000 !important;
 }
 
+
+.high-contrast #hero {
+    background:
+        #ffffff !important;
+
+    border:
+        3px solid
+        #000000 !important;
+}
+
+
+.high-contrast #hero h1,
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3,
+.high-contrast h4,
+.high-contrast p,
+.high-contrast label,
+.high-contrast span {
+    color:
+        #000000 !important;
+}
+
+
 .high-contrast #accessibility,
 .high-contrast .feature-card,
 .high-contrast #chat-section,
 .high-contrast #quiz-section,
 .high-contrast #saved-section,
 .high-contrast #resources-section {
+    background:
+        #ffffff !important;
+
     border:
         2px solid
         #000000 !important;
+
+    color:
+        #000000 !important;
 }
+
 
 .high-contrast button {
     border:
@@ -794,25 +1117,25 @@ body.high-contrast {
         #000000 !important;
 }
 
+
 @media screen and (max-width: 700px) {
     .gradio-container {
         padding:
-            12px
-            9px
-            35px
-            !important;
+            12px 9px 35px !important;
     }
+
 
     #hero {
         padding:
-            28px
-            18px;
+            30px 18px;
     }
+
 
     #hero h1 {
         font-size:
             42px;
     }
+
 
     .feature-card {
         min-height:
@@ -825,15 +1148,24 @@ body.high-contrast {
 js = """
 function careerLightMode() {
     document.body.classList.remove(
-        "dark-mode"
+        "dark-mode",
+        "color-friendly",
+        "high-contrast"
     );
 }
 
+
 function careerDarkMode() {
+    document.body.classList.remove(
+        "color-friendly",
+        "high-contrast"
+    );
+
     document.body.classList.add(
         "dark-mode"
     );
 }
+
 
 function careerGrayscale() {
     document.body.classList.toggle(
@@ -841,9 +1173,11 @@ function careerGrayscale() {
     );
 }
 
+
 function careerColorFriendly() {
     document.body.classList.remove(
-        "dark-mode"
+        "dark-mode",
+        "high-contrast"
     );
 
     document.body.classList.toggle(
@@ -851,21 +1185,25 @@ function careerColorFriendly() {
     );
 }
 
+
 function careerLargeText() {
     document.body.classList.toggle(
         "large-text"
     );
 }
 
+
 function careerHighContrast() {
     document.body.classList.remove(
-        "dark-mode"
+        "dark-mode",
+        "color-friendly"
     );
 
     document.body.classList.toggle(
         "high-contrast"
     );
 }
+
 
 function careerReset() {
     document.body.classList.remove(
@@ -917,7 +1255,7 @@ Discover careers, majors, educational pathways, and possibilities based on your 
             """
 ### Accessibility and Display
 
-Customize Career Genie so the app is easier and more comfortable for you to use.
+Customize the display so Career Genie is easier and more comfortable for you to use.
 """
         )
 
@@ -1002,7 +1340,7 @@ Customize Career Genie so the app is easier and more comfortable for you to use.
         """
 ## Explore Your Future
 
-Career Genie gives you different ways to discover careers and education pathways that could fit you.
+Career Genie gives you several ways to discover careers and education pathways that may fit your interests and goals.
 """
     )
 
@@ -1013,7 +1351,7 @@ Career Genie gives you different ways to discover careers and education pathways
             """
 ### Explore Careers
 
-Discover careers based on your interests, strengths, favourite subjects, and future goals.
+Discover career possibilities based on your interests, strengths, favourite subjects, and goals.
 """,
             elem_classes="feature-card"
         )
@@ -1023,7 +1361,7 @@ Discover careers based on your interests, strengths, favourite subjects, and fut
             """
 ### Explore Majors
 
-Learn about college and university programs connected to different careers.
+Connect careers to college and university majors and discover education pathways you may want to research.
 """,
             elem_classes="feature-card"
         )
@@ -1031,9 +1369,9 @@ Learn about college and university programs connected to different careers.
 
         gr.Markdown(
             """
-### Find Your Path
+### Discover Your Interests
 
-Not sure what you want to do yet? Career Genie can help you narrow down your possibilities.
+Use the Career Personality and Interests Quiz to identify patterns in what you enjoy and value.
 """,
             elem_classes="feature-card"
         )
@@ -1041,9 +1379,9 @@ Not sure what you want to do yet? Career Genie can help you narrow down your pos
 
         gr.Markdown(
             """
-### Build Your Future
+### Plan Your Next Step
 
-Explore skills, education pathways, and next steps connected to careers that interest you.
+Ask Career Genie about skills, programs, experiences, and pathways connected to careers that interest you.
 """,
             elem_classes="feature-card"
         )
@@ -1064,6 +1402,7 @@ Tell Career Genie about your interests, strengths, favourite subjects, hobbies, 
 
         chatbot = gr.ChatInterface(
             fn=respond,
+            type="messages",
             examples=[
                 "I do not know what career I want.",
                 "I love biology and helping people. What careers could fit me?",
@@ -1084,7 +1423,7 @@ Tell Career Genie about your interests, strengths, favourite subjects, hobbies, 
             """
 ## Career Personality and Interests Quiz
 
-Answer a few questions and Career Genie will suggest possible paths for you to explore.
+Answer a few questions and Career Genie will suggest possible pathways for you to explore.
 """
         )
 
@@ -1235,7 +1574,7 @@ Save careers you want to remember so you can research and compare them later.
             """
 ## Continue Exploring
 
-Career Genie can help you discover possibilities, but important career and education information should be verified using reliable official sources.
+Career Genie can help you discover possibilities, but important career and education information should always be verified using reliable official sources.
 
 ### Government of Canada Job Bank
 
@@ -1257,15 +1596,15 @@ https://www.ontariocolleges.ca/
 
 ### How to Use Career Genie
 
-Start by telling Career Genie what you enjoy, what you are good at, or what subjects interest you.
+Start by telling Career Genie about subjects, activities, or interests you enjoy.
 
 If you are not sure where to begin, complete the Career Personality and Interests Quiz.
 
-When Career Genie suggests a career that interests you, save it to your career list.
+When you discover an interesting career, save it to your career list.
 
-You can then ask about related majors, education pathways, skills, and similar careers.
+Ask Career Genie about related majors, education pathways, useful skills, and similar careers.
 
-Before making important decisions, verify current program requirements and career information using official sources.
+Before making important decisions, verify current requirements and information using official sources.
 """
         )
 
