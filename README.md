@@ -6,7 +6,7 @@ Career Genie is an AI-powered web application designed to help identify what you
 
 > ⚠️ Note: This Space is no longer live. The code in this repo is the full project.
 
-![Screenshot of my chatbot](screenshot.png)
+!Screenshot of my chatbot(screenshot.png)
 
 ## 🔮 What it does
 
