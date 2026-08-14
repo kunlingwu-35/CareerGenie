@@ -606,3 +606,449 @@ body.high-contrast {
     }
 }
 """
+js = """
+function careerLightMode() {
+    document.body.classList.remove(
+        "dark-mode",
+        "color-friendly",
+        "high-contrast"
+    );
+}
+
+function careerDarkMode() {
+    document.body.classList.remove(
+        "color-friendly",
+        "high-contrast"
+    );
+
+    document.body.classList.add(
+        "dark-mode"
+    );
+}
+
+function careerGrayscale() {
+    document.body.classList.toggle(
+        "grayscale-mode"
+    );
+}
+
+function careerColorFriendly() {
+    document.body.classList.remove(
+        "dark-mode",
+        "high-contrast"
+    );
+
+    document.body.classList.toggle(
+        "color-friendly"
+    );
+}
+
+function careerLargeText() {
+    document.body.classList.toggle(
+        "large-text"
+    );
+}
+
+function careerHighContrast() {
+    document.body.classList.remove(
+        "dark-mode",
+        "color-friendly"
+    );
+
+    document.body.classList.toggle(
+        "high-contrast"
+    );
+}
+
+function careerReset() {
+    document.body.classList.remove(
+        "dark-mode",
+        "grayscale-mode",
+        "color-friendly",
+        "large-text",
+        "high-contrast"
+    );
+}
+"""
+
+
+theme = gr.themes.Soft()
+
+
+with gr.Blocks(
+    title="Career Genie"
+) as app:
+
+
+    with gr.Column(
+        elem_id="hero"
+    ):
+
+        gr.Image(
+            "Career (1).png",
+            show_label=False,
+            container=False,
+            height=170
+        )
+
+        gr.Markdown(
+            """
+# Career Genie
+
+### Your future, one question at a time.
+
+Discover careers, majors, educational pathways, and possibilities based on your interests, strengths, personality, and goals.
+"""
+        )
+
+
+    with gr.Column(
+        elem_id="accessibility"
+    ):
+
+        gr.Markdown(
+            """
+### Accessibility and Display
+
+Customize Career Genie so the app is easier and more comfortable for you to use.
+"""
+        )
+
+        with gr.Row():
+
+            light_button = gr.Button(
+                "Light Mode"
+            )
+
+            dark_button = gr.Button(
+                "Dark Mode"
+            )
+
+            grayscale_button = gr.Button(
+                "Grayscale"
+            )
+
+        with gr.Row():
+
+            color_button = gr.Button(
+                "Colour-Friendly"
+            )
+
+            text_button = gr.Button(
+                "Larger Text"
+            )
+
+            contrast_button = gr.Button(
+                "High Contrast"
+            )
+
+            reset_button = gr.Button(
+                "Reset Display"
+            )
+
+
+    light_button.click(
+        fn=None,
+        js="() => careerLightMode()"
+    )
+
+    dark_button.click(
+        fn=None,
+        js="() => careerDarkMode()"
+    )
+
+    grayscale_button.click(
+        fn=None,
+        js="() => careerGrayscale()"
+    )
+
+    color_button.click(
+        fn=None,
+        js="() => careerColorFriendly()"
+    )
+
+    text_button.click(
+        fn=None,
+        js="() => careerLargeText()"
+    )
+
+    contrast_button.click(
+        fn=None,
+        js="() => careerHighContrast()"
+    )
+
+    reset_button.click(
+        fn=None,
+        js="() => careerReset()"
+    )
+
+
+    gr.Markdown(
+        """
+## Explore Your Future
+
+Career Genie gives you different ways to discover careers and education pathways that could fit you.
+"""
+    )
+
+
+    with gr.Row():
+
+        gr.Markdown(
+            """
+### Explore Careers
+
+Discover careers based on your interests, strengths, favourite subjects, and future goals.
+""",
+            elem_classes="feature-card"
+        )
+
+        gr.Markdown(
+            """
+### Explore Majors
+
+Learn about college and university programs connected to different careers.
+""",
+            elem_classes="feature-card"
+        )
+
+        gr.Markdown(
+            """
+### Find Your Path
+
+Not sure what you want to do yet? Career Genie can help you narrow down your possibilities.
+""",
+            elem_classes="feature-card"
+        )
+
+        gr.Markdown(
+            """
+### Build Your Future
+
+Explore skills, education pathways, and next steps connected to careers that interest you.
+""",
+            elem_classes="feature-card"
+        )
+
+
+    with gr.Column(
+        elem_id="chat-section"
+    ):
+
+        gr.Markdown(
+            """
+## Chat with Career Genie
+
+Tell Career Genie about your interests, strengths, favourite subjects, hobbies, or future goals.
+"""
+        )
+
+        chatbot = gr.ChatInterface(
+            fn=respond,
+            examples=[
+                "I do not know what career I want.",
+                "I love biology and helping people. What careers could fit me?",
+                "I enjoy coding and art. What careers combine both?",
+                "What majors should I explore if I enjoy math?",
+                "I like technology but also want to work with people.",
+                "What careers combine science and technology?",
+                "What could I study if I want to work in healthcare and engineering?"
+            ]
+        )
+
+
+    with gr.Column(
+        elem_id="quiz-section"
+    ):
+
+        gr.Markdown(
+            """
+## Career Personality and Interests Quiz
+
+Answer a few questions and Career Genie will suggest possible paths for you to explore.
+"""
+        )
+
+        with gr.Row():
+
+            subject = gr.Dropdown(
+                choices=[
+                    "Science / Biology",
+                    "Math",
+                    "Technology",
+                    "Art / Design",
+                    "Business"
+                ],
+                label="What subject do you enjoy most?"
+            )
+
+            work_style = gr.Radio(
+                choices=[
+                    "Working with people",
+                    "Working independently",
+                    "A mix of both"
+                ],
+                label="How do you prefer to work?"
+            )
+
+
+        with gr.Row():
+
+            interest = gr.Dropdown(
+                choices=[
+                    "Helping people",
+                    "Building things",
+                    "Solving problems",
+                    "Creating",
+                    "Working with technology"
+                ],
+                label="Which activity sounds most like you?"
+            )
+
+            value = gr.Dropdown(
+                choices=[
+                    "Helping others",
+                    "Creativity",
+                    "High earning potential",
+                    "Work-life balance",
+                    "Making an impact"
+                ],
+                label="What matters most to you in a future career?"
+            )
+
+
+        quiz_button = gr.Button(
+            "Find My Career Matches",
+            elem_classes="primary-button"
+        )
+
+        quiz_output = gr.Markdown(
+            elem_id="quiz-output"
+        )
+
+        quiz_button.click(
+            fn=quiz_result,
+            inputs=[
+                subject,
+                work_style,
+                interest,
+                value
+            ],
+            outputs=quiz_output
+        )
+
+
+    with gr.Column(
+        elem_id="saved-section"
+    ):
+
+        gr.Markdown(
+            """
+## Save Careers
+
+Found something interesting?
+
+Save careers you want to remember so you can research and compare them later.
+"""
+        )
+
+        saved_state = gr.State([])
+
+        career_input = gr.Textbox(
+            label="Career to save",
+            placeholder="Example: Biomedical Engineer"
+        )
+
+        with gr.Row():
+
+            save_button = gr.Button(
+                "Save Career",
+                elem_classes="primary-button"
+            )
+
+            clear_button = gr.Button(
+                "Clear Saved Careers"
+            )
+
+
+        saved_output = gr.JSON(
+            label="My Saved Careers"
+        )
+
+
+        save_button.click(
+            fn=save_career,
+            inputs=[
+                career_input,
+                saved_state
+            ],
+            outputs=[
+                saved_state,
+                saved_output
+            ]
+        )
+
+        clear_button.click(
+            fn=clear_saved,
+            outputs=[
+                saved_state,
+                saved_output
+            ]
+        )
+
+
+    with gr.Column(
+        elem_id="resources-section"
+    ):
+
+        gr.Markdown(
+            """
+## Continue Exploring
+
+Career Genie can help you discover possibilities, but important career and education information should always be verified using reliable official sources.
+
+### Government of Canada Job Bank
+
+Research occupations, wages, skills, education requirements, and employment outlooks.
+
+https://www.jobbank.gc.ca/
+
+### Ontario Universities Info
+
+Explore Ontario university programs, prerequisites, and admission information.
+
+https://www.ouinfo.ca/
+
+### Ontario Colleges
+
+Explore college programs and pathways across Ontario.
+
+https://www.ontariocolleges.ca/
+
+### How to Use Career Genie
+
+Start by telling Career Genie what you enjoy, what you are good at, or what subjects interest you.
+
+If you are not sure where to begin, complete the Career Personality and Interests Quiz.
+
+When Career Genie suggests a career that interests you, save it to your career list.
+
+You can then ask about related majors, education pathways, skills, and similar careers.
+
+Before making important decisions, verify current program requirements and career information using official sources.
+"""
+        )
+
+
+    gr.Markdown(
+        """
+Career Genie provides general educational guidance. Career information, salaries, admission requirements, employment outlooks, and programs may change, so always verify important information using official sources.
+""",
+        elem_classes="footer"
+    )
+
+
+app.launch(
+    theme=theme,
+    css=css,
+    js=js
