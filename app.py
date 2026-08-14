@@ -317,625 +317,185 @@ def clear_saved():
 # -----------------------------
 
 css = """
-:root {
-    --bg-main: #fff8fa;
-    --bg-secondary: #fff1f6;
-    --bg-accent: #fff8e8;
-
-    --card: #ffffff;
-    --card-soft: #fffafd;
-
-    --text-main: #4a2635;
-    --text-secondary: #765968;
-
-    --primary: #bd1855;
-    --primary-dark: #951344;
-    --primary-light: #f5b7cc;
-
-    --gold: #f4b72c;
-    --gold-dark: #d99b13;
-    --gold-soft: #fff0bd;
-
-    --border: #f0ccd9;
-
-    --shadow:
-        rgba(160, 29, 82, 0.10);
-}
-
-
-html,
-body {
-    min-height: 100%;
-}
-
-
 body {
     margin: 0;
-
-    background:
-        radial-gradient(
-            circle at 10% 10%,
-            rgba(245, 183, 204, 0.45),
-            transparent 32%
-        ),
-        radial-gradient(
-            circle at 90% 15%,
-            rgba(244, 183, 44, 0.20),
-            transparent 30%
-        ),
-        linear-gradient(
-            145deg,
-            var(--bg-main),
-            var(--bg-secondary),
-            var(--bg-accent)
-        ) !important;
-
-    color:
-        var(--text-main);
-
-    transition:
-        background 0.3s ease,
-        color 0.3s ease;
+    background: linear-gradient(135deg, #fff8fb, #fff1f6, #fff8e8) !important;
+    color: #4a2635;
 }
-
 
 .gradio-container {
-    max-width:
-        1200px !important;
-
-    margin:
-        auto !important;
-
-    padding:
-        24px 18px 50px !important;
-
-    background:
-        transparent !important;
+    max-width: 1200px !important;
+    margin: auto !important;
+    padding: 24px 18px 48px !important;
+    background: transparent !important;
 }
-
 
 #hero {
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff8fb,
-            #fce1eb,
-            #fff1c9
-        );
-
-    border-radius:
-        32px;
-
-    padding:
-        42px 30px;
-
-    margin-bottom:
-        22px;
-
-    text-align:
-        center;
-
-    border:
-        1px solid
-        rgba(189, 24, 85, 0.12);
-
-    box-shadow:
-        0 18px 50px
-        rgba(160, 29, 82, 0.12);
+    background: linear-gradient(135deg, #fff7fa, #fce1eb, #fff0c9);
+    border: 1px solid #f0ccd9;
+    border-radius: 30px;
+    padding: 40px 28px;
+    text-align: center;
+    margin-bottom: 22px;
+    box-shadow: 0 16px 40px rgba(160, 29, 82, 0.10);
 }
-
-
-#hero::before {
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        270px;
-
-    height:
-        270px;
-
-    border-radius:
-        50%;
-
-    right:
-        -100px;
-
-    top:
-        -120px;
-
-    background:
-        rgba(244, 183, 44, 0.12);
-}
-
-
-#hero::after {
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        210px;
-
-    height:
-        210px;
-
-    border-radius:
-        50%;
-
-    left:
-        -80px;
-
-    bottom:
-        -110px;
-
-    background:
-        rgba(189, 24, 85, 0.08);
-}
-
 
 #hero h1 {
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    font-size:
-        55px;
-
-    margin-top:
-        8px;
-
-    margin-bottom:
-        8px;
-
-    line-height:
-        1;
-
-    letter-spacing:
-        -2px;
-
-    color:
-        var(--primary);
+    color: #bd1855;
+    font-size: 54px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    letter-spacing: -2px;
 }
-
 
 #hero h3 {
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    margin-top:
-        8px;
-
-    font-weight:
-        500;
-
-    color:
-        var(--text-secondary);
+    color: #765968;
+    font-weight: 500;
 }
-
 
 #hero p {
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    color:
-        var(--text-secondary);
+    color: #765968;
 }
-
 
 #hero img {
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    border-radius:
-        25px !important;
-
-    max-height:
-        175px !important;
-
-    object-fit:
-        contain !important;
-
-    box-shadow:
-        0 12px 35px
-        rgba(160, 29, 82, 0.11);
+    border-radius: 22px !important;
+    max-height: 170px !important;
+    object-fit: contain !important;
 }
-
 
 #accessibility {
-    background:
-        rgba(255, 255, 255, 0.92);
-
-    padding:
-        22px;
-
-    border-radius:
-        23px;
-
-    margin-bottom:
-        22px;
-
-    border:
-        1px solid
-        var(--border);
-
-    box-shadow:
-        0 8px 28px
-        rgba(160, 29, 82, 0.07);
+    background: #ffffff;
+    border: 1px solid #f0ccd9;
+    border-radius: 22px;
+    padding: 20px;
+    margin-bottom: 22px;
+    box-shadow: 0 8px 24px rgba(160, 29, 82, 0.07);
 }
-
 
 #accessibility h3 {
-    color:
-        var(--primary-dark);
+    color: #951344;
 }
-
 
 .feature-card {
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #fff7fa
-        );
-
-    border-radius:
-        21px;
-
-    padding:
-        22px;
-
-    border:
-        1px solid
-        var(--border);
-
-    min-height:
-        145px;
-
-    box-shadow:
-        0 8px 24px
-        rgba(160, 29, 82, 0.07);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
+    background: linear-gradient(145deg, #ffffff, #fff7fa);
+    border: 1px solid #f0ccd9;
+    border-radius: 20px;
+    padding: 20px;
+    min-height: 140px;
+    box-shadow: 0 8px 22px rgba(160, 29, 82, 0.07);
 }
-
-
-.feature-card:hover {
-    transform:
-        translateY(-4px);
-
-    border-color:
-        #e59ab6;
-
-    box-shadow:
-        0 14px 32px
-        rgba(160, 29, 82, 0.13);
-}
-
 
 .feature-card h3 {
-    color:
-        var(--primary-dark);
+    color: #951344;
 }
-
-
-#chat-section,
-#quiz-section,
-#saved-section,
-#resources-section {
-    border-radius:
-        24px;
-
-    padding:
-        24px;
-
-    margin-top:
-        23px;
-
-    border:
-        1px solid
-        var(--border);
-
-    box-shadow:
-        0 10px 34px
-        var(--shadow);
-}
-
 
 #chat-section {
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #fff7fa
-        );
+    background: linear-gradient(145deg, #ffffff, #fff7fa);
+    border: 1px solid #f0ccd9;
+    border-radius: 22px;
+    padding: 22px;
+    margin-top: 22px;
+    box-shadow: 0 10px 28px rgba(160, 29, 82, 0.08);
 }
-
 
 #quiz-section {
-    background:
-        linear-gradient(
-            145deg,
-            #fffafd,
-            #fff0f5
-        );
+    background: linear-gradient(145deg, #fffafd, #fff0f5);
+    border: 1px solid #f0ccd9;
+    border-radius: 22px;
+    padding: 22px;
+    margin-top: 22px;
+    box-shadow: 0 10px 28px rgba(160, 29, 82, 0.08);
 }
-
 
 #saved-section {
-    background:
-        linear-gradient(
-            145deg,
-            #fffdf7,
-            #fff6d8
-        );
+    background: linear-gradient(145deg, #fffdf8, #fff6dc);
+    border: 1px solid #f0dca4;
+    border-radius: 22px;
+    padding: 22px;
+    margin-top: 22px;
+    box-shadow: 0 10px 28px rgba(160, 29, 82, 0.08);
 }
-
 
 #resources-section {
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #fff7fa
-        );
+    background: linear-gradient(145deg, #ffffff, #fff7fa);
+    border: 1px solid #f0ccd9;
+    border-radius: 22px;
+    padding: 22px;
+    margin-top: 22px;
+    box-shadow: 0 10px 28px rgba(160, 29, 82, 0.08);
 }
-
 
 #chat-section h2,
 #quiz-section h2,
 #saved-section h2,
 #resources-section h2 {
-    color:
-        var(--primary-dark);
+    color: #951344;
 }
-
 
 button {
-    border-radius:
-        14px !important;
-
-    font-weight:
-        700 !important;
-
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease,
-        border-color 0.15s ease !important;
+    border-radius: 13px !important;
+    font-weight: 700 !important;
 }
-
 
 button:hover {
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 7px 16px
-        rgba(160, 29, 82, 0.13);
+    transform: translateY(-1px);
 }
-
 
 .primary-button {
-    background:
-        linear-gradient(
-            135deg,
-            var(--primary),
-            #db4b7d
-        ) !important;
-
-    color:
-        white !important;
-
-    border:
-        none !important;
-
-    box-shadow:
-        0 6px 16px
-        rgba(189, 24, 85, 0.20);
+    background: linear-gradient(135deg, #bd1855, #d94b7d) !important;
+    color: white !important;
+    border: none !important;
 }
-
 
 #accessibility button {
-    background:
-        #ffffff !important;
-
-    color:
-        var(--primary-dark) !important;
-
-    border:
-        1px solid
-        var(--border) !important;
+    background: #ffffff !important;
+    color: #951344 !important;
+    border: 1px solid #f0ccd9 !important;
 }
-
 
 #accessibility button:hover {
-    background:
-        #fff2f7 !important;
-
-    border-color:
-        #e69bb7 !important;
+    background: #fff2f7 !important;
 }
-
 
 input,
 textarea {
-    border-radius:
-        14px !important;
-
-    border-color:
-        var(--border) !important;
+    border-radius: 13px !important;
+    border-color: #f0ccd9 !important;
 }
-
-
-input:focus,
-textarea:focus {
-    border-color:
-        var(--primary) !important;
-
-    box-shadow:
-        0 0 0 2px
-        rgba(189, 24, 85, 0.10) !important;
-}
-
 
 #quiz-output {
-    background:
-        rgba(255, 255, 255, 0.82);
-
-    border-radius:
-        18px;
-
-    padding:
-        17px;
-
-    border:
-        1px solid
-        var(--border);
-
-    margin-top:
-        10px;
+    background: #ffffff;
+    border: 1px solid #f0ccd9;
+    border-radius: 16px;
+    padding: 15px;
 }
-
-
-#quiz-output strong {
-    color:
-        var(--primary-dark);
-}
-
 
 .footer {
-    text-align:
-        center;
-
-    font-size:
-        13px;
-
-    color:
-        var(--text-secondary);
-
-    margin-top:
-        30px;
-
-    padding:
-        18px 15px;
-
-    border-top:
-        1px solid
-        rgba(189, 24, 85, 0.12);
+    text-align: center;
+    font-size: 13px;
+    color: #765968;
+    margin-top: 28px;
+    padding-bottom: 15px;
 }
-
 
 body.dark-mode {
-    --card:
-        #271b21;
-
-    --card-soft:
-        #302029;
-
-    --text-main:
-        #fff2f6;
-
-    --text-secondary:
-        #dcbfca;
-
-    --primary:
-        #ef6b9c;
-
-    --primary-dark:
-        #ff91b7;
-
-    --primary-light:
-        #8f3456;
-
-    --gold:
-        #f6c54c;
-
-    --gold-soft:
-        #4d4023;
-
-    --border:
-        #60404d;
-
-    --shadow:
-        rgba(0, 0, 0, 0.30);
-
-    background:
-        radial-gradient(
-            circle at 10% 10%,
-            rgba(125, 34, 68, 0.45),
-            transparent 32%
-        ),
-        radial-gradient(
-            circle at 90% 15%,
-            rgba(134, 100, 28, 0.28),
-            transparent 30%
-        ),
-        linear-gradient(
-            145deg,
-            #171116,
-            #21161d,
-            #251d16
-        ) !important;
+    background: linear-gradient(135deg, #171116, #21161d, #251d16) !important;
+    color: #fff2f6 !important;
 }
-
-
-.dark-mode .gradio-container {
-    color:
-        var(--text-main) !important;
-}
-
 
 .dark-mode #hero {
-    background:
-        linear-gradient(
-            135deg,
-            #391d2a,
-            #4c2234,
-            #493b20
-        );
-
-    border-color:
-        #684452;
+    background: linear-gradient(135deg, #391d2a, #4c2234, #493b20);
+    border-color: #684452;
 }
-
 
 .dark-mode #hero h1 {
-    color:
-        #ff8ab4;
+    color: #ff8ab4;
 }
-
 
 .dark-mode #hero h3,
 .dark-mode #hero p {
-    color:
-        #e6cbd5;
+    color: #e6cbd5;
 }
-
 
 .dark-mode #accessibility,
 .dark-mode .feature-card,
@@ -944,143 +504,80 @@ body.dark-mode {
 .dark-mode #saved-section,
 .dark-mode #resources-section,
 .dark-mode #quiz-output {
-    background:
-        #271b21 !important;
-
-    color:
-        #fff2f6 !important;
-
-    border-color:
-        #60404d !important;
+    background: #271b21 !important;
+    color: #fff2f6 !important;
+    border-color: #60404d !important;
 }
-
 
 .dark-mode h1,
 .dark-mode h2,
 .dark-mode h3,
 .dark-mode h4 {
-    color:
-        #ff91b7 !important;
+    color: #ff91b7 !important;
 }
-
 
 .dark-mode p,
 .dark-mode label,
 .dark-mode span {
-    color:
-        #e6cbd5;
+    color: #e6cbd5 !important;
 }
-
 
 .dark-mode input,
 .dark-mode textarea {
-    background:
-        #34232b !important;
-
-    color:
-        #fff2f6 !important;
-
-    border-color:
-        #684b57 !important;
+    background: #34232b !important;
+    color: #fff2f6 !important;
+    border-color: #684b57 !important;
 }
-
 
 .dark-mode #accessibility button {
-    background:
-        #34232b !important;
-
-    color:
-        #ffd5e4 !important;
-
-    border-color:
-        #684b57 !important;
+    background: #34232b !important;
+    color: #ffd5e4 !important;
+    border-color: #684b57 !important;
 }
-
-
-.dark-mode #accessibility button:hover {
-    background:
-        #452936 !important;
-}
-
 
 .grayscale-mode {
-    filter:
-        grayscale(100%);
+    filter: grayscale(100%);
 }
-
 
 .large-text {
-    font-size:
-        120% !important;
+    font-size: 120% !important;
 }
-
 
 .large-text input,
 .large-text textarea,
 .large-text button {
-    font-size:
-        110% !important;
+    font-size: 110% !important;
 }
-
 
 body.color-friendly {
-    background:
-        linear-gradient(
-            145deg,
-            #fff7d6,
-            #fffdf4,
-            #e8f4ff
-        ) !important;
+    background: linear-gradient(135deg, #fff7d6, #fffdf4, #e8f4ff) !important;
 }
-
 
 .color-friendly #hero {
-    background:
-        linear-gradient(
-            135deg,
-            #fff4bd,
-            #ffffff,
-            #dbeeff
-        );
+    background: linear-gradient(135deg, #fff4bd, #ffffff, #dbeeff);
 }
-
 
 .color-friendly #hero h1 {
-    color:
-        #7a2250;
+    color: #7a2250;
 }
-
-
-.color-friendly .feature-card,
-.color-friendly #chat-section,
-.color-friendly #quiz-section,
-.color-friendly #saved-section,
-.color-friendly #resources-section {
-    border-color:
-        #c4aa52 !important;
-}
-
 
 body.high-contrast {
-    background:
-        #ffffff !important;
-
-    color:
-        #000000 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
 }
 
-
-.high-contrast #hero {
-    background:
-        #ffffff !important;
-
-    border:
-        3px solid
-        #000000 !important;
+.high-contrast #hero,
+.high-contrast #accessibility,
+.high-contrast .feature-card,
+.high-contrast #chat-section,
+.high-contrast #quiz-section,
+.high-contrast #saved-section,
+.high-contrast #resources-section {
+    background: #ffffff !important;
+    border: 2px solid #000000 !important;
+    color: #000000 !important;
 }
 
-
-.high-contrast #hero h1,
 .high-contrast h1,
 .high-contrast h2,
 .high-contrast h3,
@@ -1088,537 +585,24 @@ body.high-contrast {
 .high-contrast p,
 .high-contrast label,
 .high-contrast span {
-    color:
-        #000000 !important;
+    color: #000000 !important;
 }
-
-
-.high-contrast #accessibility,
-.high-contrast .feature-card,
-.high-contrast #chat-section,
-.high-contrast #quiz-section,
-.high-contrast #saved-section,
-.high-contrast #resources-section {
-    background:
-        #ffffff !important;
-
-    border:
-        2px solid
-        #000000 !important;
-
-    color:
-        #000000 !important;
-}
-
-
-.high-contrast button {
-    border:
-        2px solid
-        #000000 !important;
-}
-
 
 @media screen and (max-width: 700px) {
     .gradio-container {
-        padding:
-            12px 9px 35px !important;
+        padding: 12px 9px 35px !important;
     }
-
 
     #hero {
-        padding:
-            30px 18px;
+        padding: 28px 18px;
     }
-
 
     #hero h1 {
-        font-size:
-            42px;
+        font-size: 42px;
     }
-
 
     .feature-card {
-        min-height:
-            auto;
+        min-height: auto;
     }
 }
 """
-
-
-js = """
-function careerLightMode() {
-    document.body.classList.remove(
-        "dark-mode",
-        "color-friendly",
-        "high-contrast"
-    );
-}
-
-
-function careerDarkMode() {
-    document.body.classList.remove(
-        "color-friendly",
-        "high-contrast"
-    );
-
-    document.body.classList.add(
-        "dark-mode"
-    );
-}
-
-
-function careerGrayscale() {
-    document.body.classList.toggle(
-        "grayscale-mode"
-    );
-}
-
-
-function careerColorFriendly() {
-    document.body.classList.remove(
-        "dark-mode",
-        "high-contrast"
-    );
-
-    document.body.classList.toggle(
-        "color-friendly"
-    );
-}
-
-
-function careerLargeText() {
-    document.body.classList.toggle(
-        "large-text"
-    );
-}
-
-
-function careerHighContrast() {
-    document.body.classList.remove(
-        "dark-mode",
-        "color-friendly"
-    );
-
-    document.body.classList.toggle(
-        "high-contrast"
-    );
-}
-
-
-function careerReset() {
-    document.body.classList.remove(
-        "dark-mode",
-        "grayscale-mode",
-        "color-friendly",
-        "large-text",
-        "high-contrast"
-    );
-}
-"""
-
-
-theme = gr.themes.Soft()
-
-
-with gr.Blocks(
-    title="Career Genie"
-) as app:
-
-
-    with gr.Column(
-        elem_id="hero"
-    ):
-
-        gr.Image(
-            "Career (1).png",
-            show_label=False,
-            container=False,
-            height=170
-        )
-
-        gr.Markdown(
-            """
-# Career Genie
-
-### Your future, one question at a time.
-
-Discover careers, majors, educational pathways, and possibilities based on your interests, strengths, personality, and goals.
-"""
-        )
-
-
-    with gr.Column(
-        elem_id="accessibility"
-    ):
-
-        gr.Markdown(
-            """
-### Accessibility and Display
-
-Customize the display so Career Genie is easier and more comfortable for you to use.
-"""
-        )
-
-
-        with gr.Row():
-
-            light_button = gr.Button(
-                "Light Mode"
-            )
-
-            dark_button = gr.Button(
-                "Dark Mode"
-            )
-
-            grayscale_button = gr.Button(
-                "Grayscale"
-            )
-
-
-        with gr.Row():
-
-            color_button = gr.Button(
-                "Colour-Friendly"
-            )
-
-            text_button = gr.Button(
-                "Larger Text"
-            )
-
-            contrast_button = gr.Button(
-                "High Contrast"
-            )
-
-            reset_button = gr.Button(
-                "Reset Display"
-            )
-
-
-    light_button.click(
-        fn=None,
-        js="() => careerLightMode()"
-    )
-
-
-    dark_button.click(
-        fn=None,
-        js="() => careerDarkMode()"
-    )
-
-
-    grayscale_button.click(
-        fn=None,
-        js="() => careerGrayscale()"
-    )
-
-
-    color_button.click(
-        fn=None,
-        js="() => careerColorFriendly()"
-    )
-
-
-    text_button.click(
-        fn=None,
-        js="() => careerLargeText()"
-    )
-
-
-    contrast_button.click(
-        fn=None,
-        js="() => careerHighContrast()"
-    )
-
-
-    reset_button.click(
-        fn=None,
-        js="() => careerReset()"
-    )
-
-
-    gr.Markdown(
-        """
-## Explore Your Future
-
-Career Genie gives you several ways to discover careers and education pathways that may fit your interests and goals.
-"""
-    )
-
-
-    with gr.Row():
-
-        gr.Markdown(
-            """
-### Explore Careers
-
-Discover career possibilities based on your interests, strengths, favourite subjects, and goals.
-""",
-            elem_classes="feature-card"
-        )
-
-
-        gr.Markdown(
-            """
-### Explore Majors
-
-Connect careers to college and university majors and discover education pathways you may want to research.
-""",
-            elem_classes="feature-card"
-        )
-
-
-        gr.Markdown(
-            """
-### Discover Your Interests
-
-Use the Career Personality and Interests Quiz to identify patterns in what you enjoy and value.
-""",
-            elem_classes="feature-card"
-        )
-
-
-        gr.Markdown(
-            """
-### Plan Your Next Step
-
-Ask Career Genie about skills, programs, experiences, and pathways connected to careers that interest you.
-""",
-            elem_classes="feature-card"
-        )
-
-
-    with gr.Column(
-        elem_id="chat-section"
-    ):
-
-        gr.Markdown(
-            """
-## Chat with Career Genie
-
-Tell Career Genie about your interests, strengths, favourite subjects, hobbies, or future goals.
-"""
-        )
-
-
-        chatbot = gr.ChatInterface(
-            fn=respond,
-            type="messages",
-            examples=[
-                "I do not know what career I want.",
-                "I love biology and helping people. What careers could fit me?",
-                "I enjoy coding and art. What careers combine both?",
-                "What majors should I explore if I enjoy math?",
-                "I like technology but also want to work with people.",
-                "What careers combine science and technology?",
-                "What could I study if I want to work in healthcare and engineering?"
-            ]
-        )
-
-
-    with gr.Column(
-        elem_id="quiz-section"
-    ):
-
-        gr.Markdown(
-            """
-## Career Personality and Interests Quiz
-
-Answer a few questions and Career Genie will suggest possible pathways for you to explore.
-"""
-        )
-
-
-        with gr.Row():
-
-            subject = gr.Dropdown(
-                choices=[
-                    "Science / Biology",
-                    "Math",
-                    "Technology",
-                    "Art / Design",
-                    "Business"
-                ],
-                label="What subject do you enjoy most?"
-            )
-
-
-            work_style = gr.Radio(
-                choices=[
-                    "Working with people",
-                    "Working independently",
-                    "A mix of both"
-                ],
-                label="How do you prefer to work?"
-            )
-
-
-        with gr.Row():
-
-            interest = gr.Dropdown(
-                choices=[
-                    "Helping people",
-                    "Building things",
-                    "Solving problems",
-                    "Creating",
-                    "Working with technology"
-                ],
-                label="Which activity sounds most like you?"
-            )
-
-
-            value = gr.Dropdown(
-                choices=[
-                    "Helping others",
-                    "Creativity",
-                    "High earning potential",
-                    "Work-life balance",
-                    "Making an impact"
-                ],
-                label="What matters most to you in a future career?"
-            )
-
-
-        quiz_button = gr.Button(
-            "Find My Career Matches",
-            elem_classes="primary-button"
-        )
-
-
-        quiz_output = gr.Markdown(
-            elem_id="quiz-output"
-        )
-
-
-        quiz_button.click(
-            fn=quiz_result,
-            inputs=[
-                subject,
-                work_style,
-                interest,
-                value
-            ],
-            outputs=quiz_output
-        )
-
-
-    with gr.Column(
-        elem_id="saved-section"
-    ):
-
-        gr.Markdown(
-            """
-## Save Careers
-
-Found something interesting?
-
-Save careers you want to remember so you can research and compare them later.
-"""
-        )
-
-
-        saved_state = gr.State(
-            []
-        )
-
-
-        career_input = gr.Textbox(
-            label="Career to save",
-            placeholder="Example: Biomedical Engineer"
-        )
-
-
-        with gr.Row():
-
-            save_button = gr.Button(
-                "Save Career",
-                elem_classes="primary-button"
-            )
-
-            clear_button = gr.Button(
-                "Clear Saved Careers"
-            )
-
-
-        saved_output = gr.JSON(
-            label="My Saved Careers"
-        )
-
-
-        save_button.click(
-            fn=save_career,
-            inputs=[
-                career_input,
-                saved_state
-            ],
-            outputs=[
-                saved_state,
-                saved_output
-            ]
-        )
-
-
-        clear_button.click(
-            fn=clear_saved,
-            outputs=[
-                saved_state,
-                saved_output
-            ]
-        )
-
-
-    with gr.Column(
-        elem_id="resources-section"
-    ):
-
-        gr.Markdown(
-            """
-## Continue Exploring
-
-Career Genie can help you discover possibilities, but important career and education information should always be verified using reliable official sources.
-
-### Government of Canada Job Bank
-
-Research occupations, wages, skills, education requirements, and employment outlooks.
-
-https://www.jobbank.gc.ca/
-
-### Ontario Universities Info
-
-Explore Ontario university programs, prerequisites, and admission information.
-
-https://www.ouinfo.ca/
-
-### Ontario Colleges
-
-Explore college programs and pathways across Ontario.
-
-https://www.ontariocolleges.ca/
-
-### How to Use Career Genie
-
-Start by telling Career Genie about subjects, activities, or interests you enjoy.
-
-If you are not sure where to begin, complete the Career Personality and Interests Quiz.
-
-When you discover an interesting career, save it to your career list.
-
-Ask Career Genie about related majors, education pathways, useful skills, and similar careers.
-
-Before making important decisions, verify current requirements and information using official sources.
-"""
-        )
-
-
-    gr.Markdown(
-        """
-Career Genie provides general educational guidance. Career information, salaries, admission requirements, employment outlooks, and programs may change, so always verify important information using official sources.
-""",
-        elem_classes="footer"
-    )
-
-
-app.launch(
-    theme=theme,
-    css=css,
-    js=js
-)
