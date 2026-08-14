@@ -317,27 +317,21 @@ def clear_saved():
 # -----------------------------
 
 css = """
-css = """
 
 :root {
     --bg-main: #eef8f5;
     --bg-second: #edf3ff;
     --bg-third: #f6f0ff;
-
     --card: #ffffff;
     --text-main: #22333c;
     --text-secondary: #63747f;
-
     --green: #4c9f8d;
     --green-dark: #34796b;
-
     --blue: #6789c8;
     --purple: #a586c6;
-
     --border: #dce9e5;
     --shadow: rgba(43, 74, 70, 0.10);
 }
-
 
 body {
     background:
@@ -359,7 +353,7 @@ body {
         ) !important;
 
     color: var(--text-main);
-
+}
     transition:
         background 0.3s ease,
         color 0.3s ease;
